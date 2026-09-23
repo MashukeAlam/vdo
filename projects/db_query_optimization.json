@@ -1,0 +1,117 @@
+{
+  "title": "The N+1 Query Problem: How to Stop Killing Your Database",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Why is your backend API crawling at a snail's pace? You probably have the dreaded N plus 1 query problem.",
+      "props": {
+        "title": "The N+1 Query Problem",
+        "subtitle": "How one innocent loop silently destroys your database performance",
+        "badge": "DATABASE ARCHITECTURE",
+        "tags": ["SQL", "Databases", "Performance", "Backend", "WebDev"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "TerminalSplit",
+      "narration": "You write a loop to fetch users and their posts. Behind your back, the ORM runs an extra query for every single user. One query silently explodes into hundreds.",
+      "props": {
+        "title": "THE N+1 EXPLOSION",
+        "badge": "PRODUCTION METRICS",
+        "highlightWord": "EXPLOSION",
+        "underlineColor": "#f43f5e",
+        "leftPane": {
+          "title": "ORM: fetch_users.py",
+          "lines": [
+            { "lineNum": "1", "text": "users = User.query.all()" },
+            { "lineNum": "2", "text": "for u in users:" },
+            { "lineNum": "3", "text": "  print(u.profile.bio)" }
+          ],
+          "caption": "Innocent Application Code",
+          "stickFigure": {
+            "pose": "confused",
+            "label": "Dev: 'Why 100% CPU?'"
+          }
+        },
+        "rightPane": {
+          "title": "Postgres Query Log",
+          "lines": [
+            { "lineNum": "1", "text": "SELECT * FROM users;  -- 1 query" },
+            { "lineNum": "!", "text": "SELECT * FROM profile WHERE user_id=1;", "type": "drift" },
+            { "lineNum": "!", "text": "SELECT * FROM profile WHERE user_id=2;", "type": "drift" },
+            { "lineNum": "!", "text": "... 99 MORE QUERIES SPAMMED!", "type": "drift" }
+          ],
+          "caption": "Database Connection Pool on Fire",
+          "stickFigure": {
+            "pose": "laptop-night",
+            "label": "DBA @ 2am"
+          }
+        },
+        "bottomText": "1 QUERY TURNED INTO 101 QUERIES!",
+        "bottomSubtext": "Network roundtrips choke your database connection pool."
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "CodeExplainer",
+      "narration": "The fix is eager loading. Using select related or prefetch tells the database to fetch relational data in bulk, replacing a hundred roundtrips with a single fast join.",
+      "props": {
+        "language": "python",
+        "filename": "optimized_query.py",
+        "code": "# ❌ BAD: Triggers N+1 Queries\nusers = User.query.all()\nfor user in users:\n    print(user.profile.bio)\n\n# ✅ FAST: Eager Loading with JOIN\nusers = User.query.options(\n    joinedload(User.profile)\n).all()",
+        "highlightLines": [7, 8, 9],
+        "lineNotes": [
+          { "line": 2, "note": "Spams a query per loop iteration" },
+          { "line": 7, "note": "Eager loads profile in 1 single JOIN query" }
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "ClassifierCard",
+      "narration": "With eager loading and composite indexing, query execution drops from nearly a full second down to twelve milliseconds. Always check your execution plan.",
+      "props": {
+        "title": "PERFORMANCE BENCHMARK",
+        "badge": "1,000 CONCURRENT USERS",
+        "highlightWord": "BENCHMARK",
+        "underlineColor": "#10b981",
+        "mode": "comparison",
+        "leftModel": {
+          "name": "Naive N+1 Query",
+          "iconType": "doc",
+          "accentColor": "#f43f5e",
+          "bars": [
+            { "label": "Latency (s)", "value": 0.92, "color": "#f43f5e" },
+            { "label": "DB Queries", "value": 1.0, "color": "#f43f5e" },
+            { "label": "CPU Usage", "value": 0.95, "color": "#f43f5e" }
+          ]
+        },
+        "rightModel": {
+          "name": "Eager Loaded JOIN",
+          "iconType": "cube",
+          "accentColor": "#10b981",
+          "bars": [
+            { "label": "Latency (s)", "value": 0.02, "color": "#10b981" },
+            { "label": "DB Queries", "value": 0.02, "color": "#10b981" },
+            { "label": "CPU Usage", "value": 0.08, "color": "#10b981" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "OutroCard",
+      "narration": "Drop a like, subscribe for daily software engineering deep dives, and follow me on Twitter at mashukjim!",
+      "props": {
+        "title": "Speed Up Your Backend!",
+        "subtitle": "Subscribe for daily database & architecture deep dives",
+        "twitterHandle": "@mashukjim",
+        "youtubePrompt": "Like & Subscribe"
+      }
+    }
+  ]
+}
