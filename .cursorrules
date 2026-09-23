@@ -4,6 +4,8 @@ See AGENTS.md for full project schema and components.
 
 When prompted to create a video:
 1. Write project JSON to `projects/<name>.json`.
-2. Keep narration between 125-145 words for 9:16 Shorts to stay strictly under 60 seconds.
-3. Validate with `python scripts/validate_project.py projects/<name>.json`.
-4. Run `python scripts/build_video.py --input projects/<name>.json --format Shorts --upload --privacy public`.
+2. Always conclude with an `OutroCard` scene prompting viewers to Like, Subscribe, and Follow on Twitter/X at `@mashukjim`.
+3. Keep narration between 125-145 words total (including outro) for 9:16 Shorts to stay strictly under 60 seconds.
+4. Validate with `python scripts/validate_project.py projects/<name>.json`.
+5. Run `python scripts/build_video.py --input projects/<name>.json --format Shorts --upload --privacy public`.
+

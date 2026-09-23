@@ -174,13 +174,13 @@ Renders LaTeX equations with KaTeX and explains mathematical variables.
 }
 ```
 
-### 6. `SummaryList` (The Takeaways / Outro)
+### 6. `SummaryList` (The Takeaways)
 Recaps core insights with animated numbered cards.
 ```json
 {
   "id": "scene_6",
   "type": "SummaryList",
-  "narration": "Code is becoming a commodity. Taste and craft are your ultimate moat. Subscribe for more deep dives!",
+  "narration": "Code is becoming a commodity. Taste and craft are your ultimate competitive moat.",
   "props": {
     "title": "Why Taste Still Wins",
     "items": [
@@ -192,6 +192,22 @@ Recaps core insights with animated numbered cards.
 }
 ```
 
+### 7. `OutroCard` (Mandatory CTA: Like, Subscribe & Twitter)
+Displays high-converting animated action cards prompting viewers to Like, Subscribe, and Follow on Twitter.
+```json
+{
+  "id": "scene_outro",
+  "type": "OutroCard",
+  "narration": "Drop a like, subscribe for daily AI breakthroughs, and follow me on Twitter at mashukjim!",
+  "props": {
+    "title": "Thanks for Watching!",
+    "subtitle": "Subscribe for daily AI breakdowns & follow on Twitter",
+    "twitterHandle": "@mashukjim",
+    "youtubePrompt": "Like & Subscribe"
+  }
+}
+```
+
 ---
 
 ## 🎯 Scripting Principles for Viral Tech Content
@@ -199,12 +215,16 @@ Recaps core insights with animated numbered cards.
 1. **The 3-Second Hook**: Start with a provocative question, counter-intuitive truth, or shocking metric.
 2. **Shorts Pacing Constraint**: 
    * Speed is ~2.6 words/sec.
-   * Total target: **125–145 words** across 4–6 scenes.
+   * Total target: **125–145 words** across 4–6 scenes (including the outro).
    * Total video length: **48–56 seconds**. NEVER exceed 59 seconds.
-3. **Typography & Layout**:
+3. **Mandatory Call-to-Action (Outro)**:
+   * Every video MUST end with an `OutroCard` scene.
+   * Narration must explicitly tell viewers to **Like**, **Subscribe**, and **Follow on Twitter / X: `@mashukjim`**.
+   * Spoken voiceover example: *"Drop a like, subscribe for daily tech deep dives, and follow me on Twitter at mashukjim."*
+4. **Typography & Layout**:
    * For vertical 9:16 Shorts, cards must be clean and bold.
    * Keep bullet points concise (under 8 words per bullet point).
-4. **Karaoke Subtitles**: Subtitles are generated automatically per-word and overlaid in gold/cyan. Keep narration punchy so subtitle animations remain dynamic.
+5. **Karaoke Subtitles**: Subtitles are generated automatically per-word and overlaid in gold/cyan. Keep narration punchy so subtitle animations remain dynamic.
 
 ---
 

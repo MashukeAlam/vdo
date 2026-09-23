@@ -27,6 +27,7 @@ You can prompt for any combination of the following scenes:
 4. **`MathVisualizer`**: LaTeX equations rendered via KaTeX with variable breakdown cards (ideal for Attention equations, Loss functions, LoRA factorization).
 5. **`ComparisonCard`**: Comparative breakdown (e.g. CPU vs GPU, Full Fine-Tuning vs LoRA, REST vs gRPC).
 6. **`SummaryList`**: Key takeaways and recap with staggered animated bullet points.
+7. **`OutroCard`**: High-converting call-to-action with animated Like & Subscribe cards and Twitter / X follow button (`@mashukjim`).
 
 ---
 

@@ -12,7 +12,8 @@ export type SceneType =
   | 'ArchitectureFlow'
   | 'MathVisualizer'
   | 'ComparisonCard'
-  | 'SummaryList';
+  | 'SummaryList'
+  | 'OutroCard';
 
 export interface TitleCardProps {
   title: string;
@@ -62,13 +63,21 @@ export interface SummaryListProps {
   items: string[];
 }
 
+export interface OutroCardProps {
+  title?: string;
+  subtitle?: string;
+  twitterHandle?: string;
+  youtubePrompt?: string;
+}
+
 export type SceneProps =
   | TitleCardProps
   | CodeExplainerProps
   | ArchitectureFlowProps
   | MathVisualizerProps
   | ComparisonCardProps
-  | SummaryListProps;
+  | SummaryListProps
+  | OutroCardProps;
 
 export interface SceneData {
   id: string;

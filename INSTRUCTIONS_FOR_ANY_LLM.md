@@ -62,6 +62,18 @@ You can only use these 6 component types:
    - Bulleted list of key takeaways.
    - Props: `title` (string), `items` (string[])
 
+7. `OutroCard` (Mandatory Final Scene):
+   - Action cards prompting viewers to Like, Subscribe, and Follow on Twitter/X.
+   - Props: `title` (string), `subtitle` (string), `twitterHandle` (string, default `"@mashukjim"`), `youtubePrompt` (string, default `"Like & Subscribe"`)
+
+4. **Mandatory Outro & Social CTA**:
+   - Every video MUST end with an `OutroCard`.
+   - The narration MUST instruct viewers to:
+     1. Like the video & Subscribe to the channel.
+     2. Follow on Twitter / X at `@mashukjim`.
+   - Example spoken line: *"Drop a like, subscribe for daily AI breakthroughs, and follow me on Twitter at mashukjim!"*
+   - Keep this line between 12 and 16 words, counted in the 125-145 total word budget for Shorts.
+
 ---
 
 ### 📋 Output Format Required
@@ -142,7 +154,7 @@ When the user asks for a video on a topic, respond with:
     {
       "id": "scene_5",
       "type": "SummaryList",
-      "narration": "Code is becoming a commodity, which means taste and polish are your ultimate competitive moat. Bring back actual designers.",
+      "narration": "Code is becoming a commodity, which means taste and polish are your ultimate competitive moat.",
       "props": {
         "title": "Why Taste Still Wins",
         "items": [
@@ -150,6 +162,17 @@ When the user asks for a video on a topic, respond with:
           "Generic Template UI Destroys Brand Loyalty",
           "Taste & Polish Are Your Biggest Moats"
         ]
+      }
+    },
+    {
+      "id": "scene_6",
+      "type": "OutroCard",
+      "narration": "Drop a like, subscribe for daily tech deep dives, and follow me on Twitter at mashukjim!",
+      "props": {
+        "title": "Thanks for Watching!",
+        "subtitle": "Subscribe for daily AI breakthroughs & follow on Twitter",
+        "twitterHandle": "@mashukjim",
+        "youtubePrompt": "Like & Subscribe"
       }
     }
   ]

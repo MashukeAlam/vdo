@@ -8,6 +8,7 @@ import { ArchitectureFlow } from './components/ArchitectureFlow';
 import { MathVisualizer } from './components/MathVisualizer';
 import { ComparisonCard } from './components/ComparisonCard';
 import { SummaryList } from './components/SummaryList';
+import { OutroCard } from './components/OutroCard';
 import { SubtitleOverlay } from './components/SubtitleOverlay';
 
 export const VideoComposition: React.FC<{ project: ProjectData }> = ({ project }) => {
@@ -27,6 +28,8 @@ export const VideoComposition: React.FC<{ project: ProjectData }> = ({ project }
         return <ComparisonCard {...(scene.props as any)} aspectRatio={aspectRatio} />;
       case 'SummaryList':
         return <SummaryList {...(scene.props as any)} aspectRatio={aspectRatio} />;
+      case 'OutroCard':
+        return <OutroCard {...(scene.props as any)} aspectRatio={aspectRatio} />;
       default:
         return null;
     }

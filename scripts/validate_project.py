@@ -15,6 +15,7 @@ VALID_SCENE_TYPES = {
     "MathVisualizer",
     "ComparisonCard",
     "SummaryList",
+    "OutroCard",
 }
 
 def estimate_scene_duration(narration: str, speed: float = 1.05) -> float:

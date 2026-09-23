@@ -78,7 +78,8 @@ interface SceneData {
 | `ArchitectureFlow` | Pipeline / workflow | `title`, `steps` (`[{ title, desc }]`), `activeStepIndex` |
 | `CodeExplainer` | Code diff & annotations | `language`, `filename`, `code`, `highlightLines` (array), `lineNotes` (`[{ line, note }]`) |
 | `MathVisualizer` | LaTeX formula & variables | `title`, `formula` (LaTeX), `explanation`, `variables` (`[{ symbol, meaning }]`) |
-| `SummaryList` | Key takeaways / Outro | `title`, `items` (array of strings) |
+| `SummaryList` | Key takeaways | `title`, `items` (array of strings) |
+| `OutroCard` | Like, Subscribe & Twitter CTA | `title`, `subtitle`, `twitterHandle` (`"@mashukjim"`), `youtubePrompt` (`"Like & Subscribe"`) |
 
 ---
 
@@ -98,6 +99,11 @@ interface SceneData {
 ## ⚠️ Important Rules for Agents
 
 1. **Shorts Duration Rule**: YouTube Shorts must be strictly under 60.0 seconds. 125-145 words @ 2.6 words/sec generates ~50-55s of audio, leaving a safety buffer.
-2. **Windows Encoding Rule**: In Python scripts on Windows, always ensure `sys.stdout.reconfigure(encoding="utf-8")` is present if printing emojis or special characters.
-3. **Remotion Webpack Rule**: Shiki 4 requires `@shikijs/magic-move`. Always preserve `enableTailwind` in `remotion.config.ts`.
-4. **OAuth Token Rule**: `credentials/token.json` automatically refreshes. Do not delete or overwrite it unless the user explicitly requests re-authenticating.
+2. **Mandatory Like, Subscribe & Twitter CTA Rule**:
+   * Every video MUST end with an outro scene using `OutroCard`.
+   * The narration MUST tell viewers to **Like**, **Subscribe**, and **Follow on Twitter / X at `@mashukjim`**.
+   * Example spoken narration: *"Drop a like, subscribe for daily AI breakthroughs, and follow me on Twitter at mashukjim."*
+   * Keep this outro punchy (~12-15 words) and counted within the total word budget.
+3. **Windows Encoding Rule**: In Python scripts on Windows, always ensure `sys.stdout.reconfigure(encoding="utf-8")` is present if printing emojis or special characters.
+4. **Remotion Webpack Rule**: Shiki 4 requires `@shikijs/magic-move`. Always preserve `enableTailwind` in `remotion.config.ts`.
+5. **OAuth Token Rule**: `credentials/token.json` automatically refreshes. Do not delete or overwrite it unless the user explicitly requests re-authenticating.
