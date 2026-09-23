@@ -1,0 +1,220 @@
+---
+name: video-creator
+description: >-
+  Use this skill whenever the user asks to create, script, render, or upload an educational programming or AI video, YouTube Short (9:16), or landscape tutorial (16:9) using the Remotion and Kokoro TTS video pipeline.
+---
+
+# AI Educational Video Creator Skill
+
+This skill teaches the agent how to plan, script, validate, render, and automatically upload educational videos using the local **Remotion** (React/TypeScript), **Kokoro-82M ONNX TTS**, and **YouTube Data API v3** pipeline in this workspace.
+
+---
+
+## ⚡ Quick Start: 3-Step Procedure
+
+When a user asks for a video on a topic:
+
+### Step 1: Script & Plan the Project JSON
+Write a new project definition file to `projects/<topic_slug>.json` conforming to the [Project JSON Schema](#project-json-schema).
+* **For YouTube Shorts (9:16)**: Keep total words between **120 and 145 words** across 4–6 scenes so the video finishes in **50–57 seconds** (YouTube Shorts must be strictly < 60s).
+* **For Landscape (16:9)**: Can be longer (1–5 minutes) with deeper code diffs and mathematical breakdowns.
+
+### Step 2: Validate Schema & Duration
+Run the project validator:
+```bash
+python scripts/validate_project.py projects/<topic_slug>.json
+```
+If the validator gives duration warnings or schema errors, refine the narration or props before proceeding.
+
+### Step 3: Synthesize, Render & Upload
+Run the master build pipeline:
+```bash
+# For YouTube Shorts (Automatic Public Upload):
+python scripts/build_video.py --input projects/<topic_slug>.json --format Shorts --upload --privacy public
+
+# For YouTube Shorts (Local Render Only):
+python scripts/build_video.py --input projects/<topic_slug>.json --format Shorts --render
+
+# For Landscape 16:9:
+python scripts/build_video.py --input projects/<topic_slug>.json --format Landscape --render
+```
+
+---
+
+## 📐 Project JSON Schema
+
+Save all project definitions in `projects/<name>.json`.
+
+```json
+{
+  "title": "Why Vibecoding Ruined Web Design",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Hook question or provocative insight to stop the scroll.",
+      "props": { ... }
+    }
+  ]
+}
+```
+
+### Voice & Engine Configuration
+* `"engine"`: `"kokoro"` (Default, local ONNX neural TTS) or `"edge"` (Cloud Edge-TTS).
+* `"voice"`:
+  * Male: `"am_adam"` (natural, clear conversational pace, recommended), `"am_michael"`, `"bm_george"`
+  * Female: `"af_bella"`, `"af_nicole"`, `"af_heart"`, `"bf_emma"`
+
+---
+
+## 🎨 Supported Scene Components & Props
+
+Mix and match components to create visual variety. **Rule: Never use the same component type twice in a row.**
+
+### 1. `TitleCard` (The Hook)
+Creates an impactful animated title with glow badges and hashtag pills.
+```json
+{
+  "id": "scene_1",
+  "type": "TitleCard",
+  "narration": "What if frontier AI models didn't need GPUs? Meet BitNet b1.58.",
+  "props": {
+    "title": "1.58-Bit AI: BitNet",
+    "subtitle": "Running billion-parameter models with zero matrix multiplications",
+    "badge": "HARDWARE BREAKTHROUGH",
+    "tags": ["BitNet", "AI", "Quantization", "GreenTech"]
+  }
+}
+```
+
+### 2. `ComparisonCard` (The Contrast)
+Displays a side-by-side comparison with checkmarks and bullet lists.
+```json
+{
+  "id": "scene_2",
+  "type": "ComparisonCard",
+  "narration": "Standard neural networks burn massive energy. BitNet replaces multiplications with basic addition.",
+  "props": {
+    "title": "FP16 vs Ternary BitNet",
+    "leftTitle": "Standard FP16",
+    "leftPoints": [
+      "16 bits per parameter",
+      "Billions of floating-point multiplications",
+      "Massive memory bandwidth bottleneck"
+    ],
+    "rightTitle": "BitNet b1.58",
+    "rightPoints": [
+      "Only 1.58 bits per parameter {-1, 0, +1}",
+      "Eliminates matrix multiplications",
+      "Up to 80% lower energy consumption"
+    ]
+  }
+}
+```
+
+### 3. `ArchitectureFlow` (The Mechanism)
+Displays an animated pipeline showing data flow between stages.
+```json
+{
+  "id": "scene_3",
+  "type": "ArchitectureFlow",
+  "narration": "When millions of developers vibe code without design intent, the web collapses into a monoculture.",
+  "props": {
+    "title": "The Monoculture Loop",
+    "activeStepIndex": 1,
+    "steps": [
+      { "title": "Prompt Model", "desc": "Ask AI for modern landing page" },
+      { "title": "Statistical Median", "desc": "Outputs average Tailwind template" },
+      { "title": "Zero Personality", "desc": "Another clone website born" }
+    ]
+  }
+}
+```
+
+### 4. `CodeExplainer` (The Code Implementation)
+Displays an editor window with Shiki syntax highlighting, line numbers, line highlighting, and line annotations.
+```json
+{
+  "id": "scene_4",
+  "type": "CodeExplainer",
+  "narration": "In code, the BitLinear layer replaces nn.Linear with pure integer arithmetic.",
+  "props": {
+    "language": "python",
+    "filename": "bit_linear.py",
+    "code": "class BitLinear(nn.Linear):\n    def forward(self, x):\n        w_quant = weight_quant(self.weight)\n        return F.linear(x, w_quant)",
+    "highlightLines": [3, 4],
+    "lineNotes": [
+      { "line": 3, "note": "Quantizes weights to {-1, 0, +1}" },
+      { "line": 4, "note": "Zero floating-point multiplications" }
+    ]
+  }
+}
+```
+
+### 5. `MathVisualizer` (The Formula)
+Renders LaTeX equations with KaTeX and explains mathematical variables.
+```json
+{
+  "id": "scene_5",
+  "type": "MathVisualizer",
+  "narration": "Mathematically, weights are scaled by mean absolute value, clipping into ternary values.",
+  "props": {
+    "title": "Ternary Weight Quantization",
+    "formula": "\\tilde{W} = \\text{RoundClip}\\left(\\frac{W}{\\gamma + \\epsilon}, -1, 1\\right)",
+    "explanation": "Weights are normalized and rounded to {-1, 0, +1}.",
+    "variables": [
+      { "symbol": "W", "meaning": "Full-precision weight tensor" },
+      { "symbol": "\\gamma", "meaning": "Mean absolute scale factor" },
+      { "symbol": "\\tilde{W}", "meaning": "Quantized ternary weights" }
+    ]
+  }
+}
+```
+
+### 6. `SummaryList` (The Takeaways / Outro)
+Recaps core insights with animated numbered cards.
+```json
+{
+  "id": "scene_6",
+  "type": "SummaryList",
+  "narration": "Code is becoming a commodity. Taste and craft are your ultimate moat. Subscribe for more deep dives!",
+  "props": {
+    "title": "Why Taste Still Wins",
+    "items": [
+      "AI Writes Boilerplate, Designers Define Soul",
+      "Generic Template UI Destroys Brand Loyalty",
+      "Taste & Polish Are Your Biggest Moats"
+    ]
+  }
+}
+```
+
+---
+
+## 🎯 Scripting Principles for Viral Tech Content
+
+1. **The 3-Second Hook**: Start with a provocative question, counter-intuitive truth, or shocking metric.
+2. **Shorts Pacing Constraint**: 
+   * Speed is ~2.6 words/sec.
+   * Total target: **125–145 words** across 4–6 scenes.
+   * Total video length: **48–56 seconds**. NEVER exceed 59 seconds.
+3. **Typography & Layout**:
+   * For vertical 9:16 Shorts, cards must be clean and bold.
+   * Keep bullet points concise (under 8 words per bullet point).
+4. **Karaoke Subtitles**: Subtitles are generated automatically per-word and overlaid in gold/cyan. Keep narration punchy so subtitle animations remain dynamic.
+
+---
+
+## 🛠️ Command Reference
+
+| Action | Command |
+|---|---|
+| **Validate project JSON** | `python scripts/validate_project.py projects/<name>.json` |
+| **Render Shorts (9:16)** | `python scripts/build_video.py --input projects/<name>.json --format Shorts --render` |
+| **Render Landscape (16:9)**| `python scripts/build_video.py --input projects/<name>.json --format Landscape --render` |
+| **Build & Upload to YouTube** | `python scripts/build_video.py --input projects/<name>.json --format Shorts --upload --privacy public` |
+| **Live Studio Preview** | `npm run dev` (visit `http://localhost:3000`) |
+| **Direct YouTube Upload** | `python scripts/youtube_uploader.py --video out/<file>.mp4 --project projects/<name>.json --short --privacy public` |

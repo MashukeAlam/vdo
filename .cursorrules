@@ -1,0 +1,9 @@
+# Cursor Rules for AI Video Creator
+
+See AGENTS.md for full project schema and components.
+
+When prompted to create a video:
+1. Write project JSON to `projects/<name>.json`.
+2. Keep narration between 125-145 words for 9:16 Shorts to stay strictly under 60 seconds.
+3. Validate with `python scripts/validate_project.py projects/<name>.json`.
+4. Run `python scripts/build_video.py --input projects/<name>.json --format Shorts --upload --privacy public`.

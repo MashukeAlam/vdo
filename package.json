@@ -1,0 +1,32 @@
+{
+  "name": "vdo-creator",
+  "version": "1.0.0",
+  "description": "AI-powered educational video creator for programming and LLM topics",
+  "scripts": {
+    "dev": "remotion preview",
+    "build": "remotion render",
+    "generate": "node scripts/generate.js"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.526",
+    "@remotion/media-utils": "^4.0.526",
+    "@remotion/paths": "^4.0.526",
+    "@remotion/tailwind": "^4.0.526",
+    "@shikijs/magic-move": "^4.4.3",
+    "katex": "^0.16.11",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.526",
+    "shiki": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.6.3"
+  }
+}

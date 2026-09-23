@@ -1,0 +1,93 @@
+{
+  "title": "What is Jev AI by TypeSafe?",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Stop using giant LLMs for simple if-statements. TypeSafe AI just launched Jev, a blazing fast System One foundation model.",
+      "props": {
+        "title": "Meet Jev: System 1 AI",
+        "subtitle": "High-speed typed decisions that replace slow conversational LLMs",
+        "badge": "TYPESAFE AI BREAKTHROUGH",
+        "tags": ["JevAI", "SystemOne", "FastInference", "TypeScript"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "ArchitectureFlow",
+      "narration": "Instead of slow token-by-token generation, Jev takes your application state and evaluates typed questions in parallel in under 100 milliseconds.",
+      "props": {
+        "title": "How Jev Works",
+        "activeStepIndex": 1,
+        "steps": [
+          {
+            "title": "Input State",
+            "desc": "Raw text or JSON context"
+          },
+          {
+            "title": "Parallel Primitives",
+            "desc": "Choice, Score & Noul evaluation"
+          },
+          {
+            "title": "Typed Output",
+            "desc": "Calibrated decision in <100ms"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ComparisonCard",
+      "narration": "Traditional LLMs are built to chat and often hallucinate formats. Jev acts as an ultra-fast, deterministic decision engine costing fractions of a cent.",
+      "props": {
+        "title": "Traditional LLMs vs Jev",
+        "leftTitle": "Traditional LLMs",
+        "leftPoints": [
+          "Autoregressive token generation",
+          "Slow latency: 1 to 5 seconds",
+          "Unreliable JSON markdown parsing",
+          "High compute & API costs"
+        ],
+        "rightTitle": "Jev (System One)",
+        "rightPoints": [
+          "Parallel single-pass evaluation",
+          "Ultra low latency: 70 to 100ms",
+          "Guaranteed typed schema outputs",
+          "$0.042 per billion input tokens"
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "CodeExplainer",
+      "narration": "In code, define typed primitives like Choice or Noul. You get direct type-safe branching without parsing markdown.",
+      "props": {
+        "language": "typescript",
+        "filename": "jev_agent.ts",
+        "code": "import { TypeSafeClient, Choice, Noul } from '@typesafe-ai/sdk';\n\nconst client = new TypeSafeClient();\nconst decision = await client.evaluate({\n  state: { query: \"Urgent: refund my order!\" },\n  questions: {\n    intent: Choice([\"refund\", \"support\", \"faq\"]),\n    is_urgent: Noul() // Returns probability\n  }\n});\n\nif (decision.intent === \"refund\" && decision.is_urgent > 0.8) {\n  await triggerAutoEscalation();\n}",
+        "highlightLines": [6, 7, 11],
+        "lineNotes": [
+          { "line": 6, "note": "Typed classification" },
+          { "line": 11, "note": "Direct logic branch" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "SummaryList",
+      "narration": "Jev is built for AI agent tool gating, sub-second support routing, content moderation, and high-frequency semantic filtering.",
+      "props": {
+        "title": "Top Jev Use Cases",
+        "items": [
+          "Agent Tool Call Gating & Verification",
+          "Sub-100ms Support Ticket Triage",
+          "Real-Time Security & Guardrails",
+          "High-Speed Semantic Routing in RAG"
+        ]
+      }
+    }
+  ]
+}

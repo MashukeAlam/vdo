@@ -1,0 +1,85 @@
+{
+  "title": "BitNet b1.58: 1-Bit AI with Zero Matrix Multiplications",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "What if frontier AI models didn't need power-hungry GPUs? Meet BitNet b1.58, the architecture that eliminates matrix multiplications entirely.",
+      "props": {
+        "title": "1.58-Bit LLMs: BitNet",
+        "subtitle": "Running billion-parameter AI without GPU matrix multiplications",
+        "badge": "HARDWARE EFFICIENCY BREAKTHROUGH",
+        "tags": ["BitNet", "Quantization", "GreenAI", "EdgeAI"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "ComparisonCard",
+      "narration": "Standard neural networks rely on expensive floating-point multiplications. BitNet quantizes every single weight to just three values: minus one, zero, and plus one.",
+      "props": {
+        "title": "FP16 vs Ternary BitNet",
+        "leftTitle": "Standard FP16 / FP8",
+        "leftPoints": [
+          "Requires 16 or 8 bits per parameter",
+          "Billions of floating-point multiplications (MAC)",
+          "Huge memory bandwidth bottlenecks",
+          "Burns massive kilowatt power on GPUs"
+        ],
+        "rightTitle": "BitNet b1.58",
+        "rightPoints": [
+          "Only 1.58 bits per parameter {-1, 0, +1}",
+          "Replaces multiplications with basic additions",
+          "Up to 80% lower memory energy consumption",
+          "Runs large models natively on CPUs & phones"
+        ]
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "MathVisualizer",
+      "narration": "Mathematically, weights are scaled by the mean absolute value, quantizing continuous weights into pure ternary states without degrading language capabilities.",
+      "props": {
+        "title": "Ternary Weight Quantization",
+        "formula": "\\tilde{W} = \\text{RoundClip}\\left(\\frac{W}{\\gamma + \\epsilon}, -1, 1\\right), \\quad \\gamma = \\frac{1}{nm} \\sum |W_{ij}|",
+        "explanation": "Weights are normalized and rounded to the discrete set {-1, 0, +1}, turning matrix math into addition and subtraction.",
+        "variables": [
+          { "symbol": "W", "meaning": "Full-precision weight matrix" },
+          { "symbol": "\\gamma", "meaning": "Mean absolute scale factor" },
+          { "symbol": "\\tilde{W}", "meaning": "Ternary weights {-1, 0, 1}" }
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "CodeExplainer",
+      "narration": "In code, the BitLinear layer replaces nn.Linear, quantizing inputs and weights into ternary values with pure integer arithmetic.",
+      "props": {
+        "language": "python",
+        "filename": "bitlinear.py",
+        "code": "class BitLinear(nn.Module):\n    def __init__(self, in_features, out_features):\n        super().__init__()\n        self.weight = nn.Parameter(torch.randn(out_features, in_features))\n\n    def forward(self, x):\n        # Quantize weights to {-1, 0, +1}\n        gamma = self.weight.abs().mean()\n        w_quant = (self.weight / gamma).round().clamp(-1, 1)\n        # Pure integer additions instead of float multiply!\n        return F.linear(x, w_quant) * gamma",
+        "highlightLines": [8, 9, 11],
+        "lineNotes": [
+          { "line": 9, "note": "Ternary quantization" },
+          { "line": 11, "note": "Integer addition bypass" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "SummaryList",
+      "narration": "BitNet b1.58 is the blueprint for running high-performance LLMs on smartphones, laptops, and low-power edge chips.",
+      "props": {
+        "title": "The 1-Bit AI Revolution",
+        "items": [
+          "Eliminates GPU Floating-Point Multiplications",
+          "Matches Full-Precision Model Accuracy",
+          "Up to 4x Faster CPU Inference",
+          "The Future of Local & Mobile AI"
+        ]
+      }
+    }
+  ]
+}

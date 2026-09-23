@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Remotion & Render outputs
+out/
+.remotion/
+
+# Audio outputs & test files
+public/audio/
+scripts/*.mp3
+scripts/*.wav
+
+# Local AI Models (Large files > 100MB)
+models/*.onnx
+models/*.bin
+
+# OAuth & Credentials (NEVER COMMIT)
+credentials/client_secrets.json
+credentials/token.json
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# OS files
+.DS_Store
+Thumbs.db

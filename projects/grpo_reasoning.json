@@ -1,0 +1,93 @@
+{
+  "title": "How DeepSeek-R1 Thinks: GRPO Explained",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "How did DeepSeek-R1 achieve OpenAI o1-level reasoning without giant training budgets? The answer is GRPO, or Group Relative Policy Optimization.",
+      "props": {
+        "title": "How DeepSeek-R1 Thinks: GRPO",
+        "subtitle": "Supercharging AI reasoning without massive critic models",
+        "badge": "REASONING AI BREAKTHROUGH",
+        "tags": ["DeepSeekR1", "GRPO", "ReinforcementLearning", "ReasoningAI"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "ArchitectureFlow",
+      "narration": "Traditional reinforcement learning like PPO requires training a massive critic model alongside the policy. GRPO eliminates the critic entirely by sampling a group of answers for each prompt.",
+      "props": {
+        "title": "How GRPO Works",
+        "activeStepIndex": 1,
+        "steps": [
+          {
+            "title": "Prompt & Group Rollout",
+            "desc": "Generate G candidate reasoning paths"
+          },
+          {
+            "title": "Relative Score Normalization",
+            "desc": "Compare candidates against group mean"
+          },
+          {
+            "title": "Policy Update",
+            "desc": "Reinforce top reasoning chains"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ComparisonCard",
+      "narration": "By removing the need for a separate value network, GRPO cuts training memory in half and lets models discover emergent self-reflection and chain-of-thought autonomously.",
+      "props": {
+        "title": "PPO vs DeepSeek GRPO",
+        "leftTitle": "Traditional PPO",
+        "leftPoints": [
+          "Requires a separate Critic network",
+          "Doubles GPU memory requirements",
+          "Hard to balance policy and value loss",
+          "Complex multi-stage alignment"
+        ],
+        "rightTitle": "DeepSeek GRPO",
+        "rightPoints": [
+          "No Critic network needed (0 extra params)",
+          "Normalizes rewards directly within the group",
+          "Cuts reinforcement learning VRAM in half",
+          "Sparks natural 'aha moments' & self-correction"
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "MathVisualizer",
+      "narration": "The advantage for each response is simply its reward minus the group mean, divided by the group standard deviation. The best reasoning paths get reinforced, and bad paths get penalized.",
+      "props": {
+        "title": "Group Relative Advantage",
+        "formula": "A_i = \\frac{r_i - \\text{mean}(\\{r_1, \\dots, r_G\\})}{\\text{std}(\\{r_1, \\dots, r_G\\})}",
+        "explanation": "Calculates relative advantage purely within sampled group G without requiring a value function network.",
+        "variables": [
+          { "symbol": "r_i", "meaning": "Reward of i-th reasoning trajectory" },
+          { "symbol": "G", "meaning": "Group size of candidate rollouts" },
+          { "symbol": "A_i", "meaning": "Relative advantage score" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "SummaryList",
+      "narration": "GRPO proves you don't need closed-source black boxes to train world-class reasoning models. Pure reinforcement learning is the new frontier.",
+      "props": {
+        "title": "Key Takeaways from GRPO",
+        "items": [
+          "Eliminated the Critic Value Network",
+          "Halved Reinforcement Learning Memory Costs",
+          "Unlocked DeepSeek-R1's Self-Correction",
+          "Democratized Open-Source Reasoning"
+        ]
+      }
+    }
+  ]
+}

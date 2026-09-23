@@ -1,0 +1,94 @@
+{
+  "title": "DeepSeek vs Claude vs GPT for Coding",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "DeepSeek versus Claude versus GPT for coding. Which AI model should you actually use for your developer workflow?",
+      "props": {
+        "title": "DeepSeek vs Claude vs GPT: Best for Coding?",
+        "subtitle": "The definitive breakdown of frontier AI models for software engineering",
+        "badge": "AI CODING SHOWDOWN",
+        "tags": ["CodingAI", "DeepSeek", "Claude", "ChatGPT", "DevTools"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "ComparisonCard",
+      "narration": "Claude 3.5 Sonnet is the undisputed king for full-stack engineering, multi-file refactoring, and agentic tools like Cursor. GPT excels with models like o1 and o3 for edge-case reasoning and GitHub Copilot workflows.",
+      "props": {
+        "title": "Claude vs GPT for Developers",
+        "leftTitle": "Claude (3.5 / 3.7)",
+        "leftPoints": [
+          "Undisputed king of full-stack engineering",
+          "Flawless repo-wide multi-file refactoring",
+          "Top choice in Cursor, Windsurf & Claude Code",
+          "Writes clean, idiomatic architecture"
+        ],
+        "rightTitle": "GPT (4o / o1 / o3)",
+        "rightPoints": [
+          "o1 & o3 excel at tough algorithmic puzzles",
+          "Exceptional at hard edge-case debugging",
+          "Native GitHub Copilot & Canvas ecosystem",
+          "Strong structured JSON & function calling"
+        ]
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ArchitectureFlow",
+      "narration": "Where does DeepSeek win? Cost and freedom. With open weights you can run locally, and API prices ninety-five percent cheaper than closed models, DeepSeek is dominating high-volume coding pipelines.",
+      "props": {
+        "title": "Where DeepSeek Wins",
+        "activeStepIndex": 1,
+        "steps": [
+          {
+            "title": "Open Weights",
+            "desc": "Run privately on your own hardware"
+          },
+          {
+            "title": "95% Cheaper",
+            "desc": "Fractions of a cent per 1M tokens"
+          },
+          {
+            "title": "R1 Reasoning",
+            "desc": "Beats closed models on code benchmarks"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "CodeExplainer",
+      "narration": "Here is the smart developer strategy: route complex architecture to Claude, tricky logic bugs to GPT, and high-volume test generation to DeepSeek.",
+      "props": {
+        "language": "python",
+        "filename": "model_router.py",
+        "code": "def route_coding_task(task_type: str):\n    if task_type == \"repo_refactoring\":\n        return \"Claude 3.5 Sonnet\"  # Best multi-file context\n    elif task_type == \"hard_logic_bug\":\n        return \"OpenAI o3-mini\"     # Deep reasoning chains\n    elif task_type == \"batch_unit_tests\":\n        return \"DeepSeek-R1\"        # 95% cheaper & open weights",
+        "highlightLines": [3, 5, 7],
+        "lineNotes": [
+          { "line": 3, "note": "Top repo architecture" },
+          { "line": 5, "note": "Edge case logic" },
+          { "line": 7, "note": "Massive scale & low cost" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "SummaryList",
+      "narration": "Don't limit yourself to just one model. Use Claude to build, GPT to solve hard logic, and DeepSeek to scale affordably.",
+      "props": {
+        "title": "The Developer Cheat Sheet",
+        "items": [
+          "Claude: Best for Real-World Software Engineering",
+          "GPT: Best for Tricky Edge Cases & Copilot",
+          "DeepSeek: Best for Cost, Privacy & Open Weights",
+          "Pro Tip: Route tasks dynamically across all three"
+        ]
+      }
+    }
+  ]
+}

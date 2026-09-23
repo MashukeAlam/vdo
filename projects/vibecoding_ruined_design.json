@@ -1,0 +1,94 @@
+{
+  "title": "Why Vibecoding Ruined Web Design",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Vibecoding is killing web design. Why does every single website built in 2026 look completely identical?",
+      "props": {
+        "title": "Why Vibecoding Ruined Web Design",
+        "subtitle": "The death of taste, soul, and intentional UI craft in the AI era",
+        "badge": "DESIGN CRITIQUE",
+        "tags": ["WebDesign", "VibeCoding", "UIUX", "Frontend", "TechOpinion"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "ComparisonCard",
+      "narration": "When you vibe code with an LLM, you get generic design slop. Every app gets the exact same dark background, identical Bento grid cards, generic purple gradients, and Inter font. Zero soul, zero identity.",
+      "props": {
+        "title": "Vibecoded Slop vs Design Taste",
+        "leftTitle": "Vibecoded Slop",
+        "leftPoints": [
+          "Generic purple & cyan glowing gradients",
+          "Identical copy-paste Bento grid cards",
+          "Inter font and bland typography",
+          "Built for prompt vibes, not human users"
+        ],
+        "rightTitle": "Designer Craft",
+        "rightPoints": [
+          "Bespoke editorial typography & character",
+          "Intentional white space and spatial rhythm",
+          "Distinct emotional resonance & brand identity",
+          "Purpose-built tactile micro-interactions"
+        ]
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ArchitectureFlow",
+      "narration": "LLMs have zero taste. They are trained on the statistical median of the internet. When millions of developers vibe code without design intent, the web collapses into a boring monoculture.",
+      "props": {
+        "title": "The Homogenization Loop",
+        "activeStepIndex": 1,
+        "steps": [
+          {
+            "title": "Prompt the Model",
+            "desc": "Ask AI to build a 'modern landing page'"
+          },
+          {
+            "title": "Statistical Median",
+            "desc": "AI outputs average Tailwind template"
+          },
+          {
+            "title": "Zero Personality",
+            "desc": "Another forgettable, clone website"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "CodeExplainer",
+      "narration": "Design is not just slapping utility classes together. It is typography hierarchy, intentional contrast, and custom motion physics that make software feel memorable and human.",
+      "props": {
+        "language": "css",
+        "filename": "taste_vs_slop.css",
+        "code": "/* Vibecoded Default: Median AI Slop */\n.vibecoded-btn {\n  background: linear-gradient(to right, #8b5cf6, #ec4899);\n  border-radius: 9999px; /* Generic AI glow */\n}\n\n/* Crafted with Taste: Human Designer */\n.bespoke-experience {\n  font-family: 'Fraunces', serif;\n  letter-spacing: -0.03em;\n  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);\n}",
+        "highlightLines": [7, 8, 9, 10],
+        "lineNotes": [
+          { "line": 2, "note": "Generic AI prompt default" },
+          { "line": 7, "note": "Intentional editorial craft" },
+          { "line": 10, "note": "Bespoke motion physics" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "SummaryList",
+      "narration": "Code is becoming a commodity, which means taste and polish are your ultimate competitive moat. Stop vibecoding your UI, and bring back actual designers.",
+      "props": {
+        "title": "Why Taste Still Wins",
+        "items": [
+          "AI Writes Boilerplate, Designers Define Soul",
+          "Generic Template UI Destroys Brand Loyalty",
+          "Taste & Polish Are Your Biggest Moats",
+          "Hire Actual Designers to Stand Out"
+        ]
+      }
+    }
+  ]
+}

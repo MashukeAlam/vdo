@@ -1,0 +1,93 @@
+{
+  "title": "DeepSeek's Secret: Multi-Head Latent Attention (MLA)",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Why does DeepSeek cost ten times less to run than other frontier models? The secret is Multi-Head Latent Attention.",
+      "props": {
+        "title": "DeepSeek's Secret: MLA",
+        "subtitle": "How Multi-Head Latent Attention slashed KV-cache memory by 93%",
+        "badge": "LLM ARCHITECTURE BREAKTHROUGH",
+        "tags": ["DeepSeek", "MLA", "Transformers", "AIInference"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "ArchitectureFlow",
+      "narration": "In standard transformers, storing Key-Value caches for thousands of tokens suffocates GPU memory. MLA compresses all Keys and Values into a single low-dimensional latent vector.",
+      "props": {
+        "title": "How MLA Works",
+        "activeStepIndex": 1,
+        "steps": [
+          {
+            "title": "Input Hidden State",
+            "desc": "Tokens entering attention layer"
+          },
+          {
+            "title": "Latent Compression",
+            "desc": "Project to tiny latent vector c_t"
+          },
+          {
+            "title": "On-the-Fly Decompression",
+            "desc": "Restore Q, K, V with zero cache bloat"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ComparisonCard",
+      "narration": "Compared to standard Multi-Head Attention and Grouped-Query Attention, MLA delivers a massive ninety-three percent reduction in KV cache memory while maintaining full expressiveness.",
+      "props": {
+        "title": "MHA vs DeepSeek MLA",
+        "leftTitle": "Standard MHA & GQA",
+        "leftPoints": [
+          "Stores massive Key & Value matrices",
+          "Severely limits batch size",
+          "Context length hits GPU VRAM walls",
+          "High memory bandwidth latency"
+        ],
+        "rightTitle": "DeepSeek MLA",
+        "rightPoints": [
+          "Caches only compressed 512-dim latent vector",
+          "93.3% smaller KV-cache footprint",
+          "Enables massive concurrent batch sizes",
+          "Powers 128k+ long context cheaply"
+        ]
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "MathVisualizer",
+      "narration": "Mathematically, the Key and Value states are compressed through a down-projection matrix, and decompressed during attention computation without ever caching the expanded states.",
+      "props": {
+        "title": "Low-Rank KV Compression",
+        "formula": "c_t^{KV} = W^{DKV} h_t \\quad \\implies \\quad k_t^C = W^{UK} c_t^{KV}",
+        "explanation": "Only the compressed vector c_t is stored in memory, decompressing keys and values on the fly.",
+        "variables": [
+          { "symbol": "h_t", "meaning": "Input token hidden state" },
+          { "symbol": "W^{DKV}", "meaning": "Down-projection matrix" },
+          { "symbol": "c_t^{KV}", "meaning": "Compressed latent KV cache" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "SummaryList",
+      "narration": "Multi-Head Latent Attention proves that algorithmic efficiency beats brute-force compute. That is why DeepSeek is redefining open-weight AI.",
+      "props": {
+        "title": "Why MLA Changes Everything",
+        "items": [
+          "93% Reduction in KV Cache Memory",
+          "Runs 128K+ Context on Commodity GPUs",
+          "Powers DeepSeek-V2 and DeepSeek-V3",
+          "The Future Standard for Attention Layers"
+        ]
+      }
+    }
+  ]
+}
