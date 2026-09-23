@@ -1,5 +1,5 @@
 {
-  "title": "The N+1 Query Problem: How to Stop Killing Your Database",
+  "title": "Why SQLite in Production Is Actually Genius",
   "aspectRatio": "9:16",
   "engine": "kokoro",
   "voice": "am_adam",
@@ -7,122 +7,168 @@
     {
       "id": "scene_1",
       "type": "TitleCard",
-      "narration": "Why is your backend API crawling at a snail's pace? You probably have the dreaded N plus 1 query problem.",
+      "narration": "Are you still paying thousands for managed cloud databases when your entire dataset easily fits in memory? SQLite in production is making a massive comeback across modern engineering teams.",
       "props": {
-        "title": "The N+1 Query Problem",
-        "subtitle": "How one innocent loop silently destroys your database performance",
+        "title": "SQLite in Production",
+        "subtitle": "Why embedding your database inside your app is the ultimate 2026 architecture",
         "badge": "DATABASE ARCHITECTURE",
         "tags": [
-          "SQL",
-          "Databases",
-          "Performance",
+          "SQLite",
+          "Database",
+          "Architecture",
           "Backend",
+          "Performance",
           "WebDev"
         ]
       },
       "audioFile": "audio/scene_1.mp3",
-      "durationSec": 6.76,
-      "durationInFrames": 203,
+      "durationSec": 11.51,
+      "durationInFrames": 345,
       "words": [
         {
-          "word": "Why",
+          "word": "Are",
           "start": 0.05,
-          "end": 0.272
+          "end": 0.257
         },
         {
-          "word": "is",
-          "start": 0.272,
-          "end": 0.42
+          "word": "you",
+          "start": 0.257,
+          "end": 0.464
+        },
+        {
+          "word": "still",
+          "start": 0.464,
+          "end": 0.809
+        },
+        {
+          "word": "paying",
+          "start": 0.809,
+          "end": 1.224
+        },
+        {
+          "word": "thousands",
+          "start": 1.224,
+          "end": 1.845
+        },
+        {
+          "word": "for",
+          "start": 1.845,
+          "end": 2.052
+        },
+        {
+          "word": "managed",
+          "start": 2.052,
+          "end": 2.535
+        },
+        {
+          "word": "cloud",
+          "start": 2.535,
+          "end": 2.88
+        },
+        {
+          "word": "databases",
+          "start": 2.88,
+          "end": 3.502
+        },
+        {
+          "word": "when",
+          "start": 3.502,
+          "end": 3.778
         },
         {
           "word": "your",
-          "start": 0.42,
-          "end": 0.715
+          "start": 3.778,
+          "end": 4.054
         },
         {
-          "word": "backend",
-          "start": 0.715,
-          "end": 1.233
+          "word": "entire",
+          "start": 4.054,
+          "end": 4.468
         },
         {
-          "word": "API",
-          "start": 1.233,
-          "end": 1.455
+          "word": "dataset",
+          "start": 4.468,
+          "end": 4.951
         },
         {
-          "word": "crawling",
-          "start": 1.455,
-          "end": 2.046
+          "word": "easily",
+          "start": 4.951,
+          "end": 5.366
         },
         {
-          "word": "at",
-          "start": 2.046,
-          "end": 2.194
+          "word": "fits",
+          "start": 5.366,
+          "end": 5.642
+        },
+        {
+          "word": "in",
+          "start": 5.642,
+          "end": 5.78
+        },
+        {
+          "word": "memory?",
+          "start": 5.78,
+          "end": 6.263
+        },
+        {
+          "word": "SQLite",
+          "start": 6.263,
+          "end": 6.677
+        },
+        {
+          "word": "in",
+          "start": 6.677,
+          "end": 6.815
+        },
+        {
+          "word": "production",
+          "start": 6.815,
+          "end": 7.506
+        },
+        {
+          "word": "is",
+          "start": 7.506,
+          "end": 7.644
+        },
+        {
+          "word": "making",
+          "start": 7.644,
+          "end": 8.058
         },
         {
           "word": "a",
-          "start": 2.194,
-          "end": 2.268
+          "start": 8.058,
+          "end": 8.127
         },
         {
-          "word": "snail's",
-          "start": 2.268,
-          "end": 2.785
+          "word": "massive",
+          "start": 8.127,
+          "end": 8.61
         },
         {
-          "word": "pace?",
-          "start": 2.785,
-          "end": 3.155
+          "word": "comeback",
+          "start": 8.61,
+          "end": 9.163
         },
         {
-          "word": "You",
-          "start": 3.155,
-          "end": 3.377
+          "word": "across",
+          "start": 9.163,
+          "end": 9.577
         },
         {
-          "word": "probably",
-          "start": 3.377,
-          "end": 3.968
+          "word": "modern",
+          "start": 9.577,
+          "end": 9.991
         },
         {
-          "word": "have",
-          "start": 3.968,
-          "end": 4.264
+          "word": "engineering",
+          "start": 9.991,
+          "end": 10.75
         },
         {
-          "word": "the",
-          "start": 4.264,
-          "end": 4.485
-        },
-        {
-          "word": "dreaded",
-          "start": 4.485,
-          "end": 5.003
-        },
-        {
-          "word": "N",
-          "start": 5.003,
-          "end": 5.077
-        },
-        {
-          "word": "plus",
-          "start": 5.077,
-          "end": 5.372
-        },
-        {
-          "word": "1",
-          "start": 5.372,
-          "end": 5.446
-        },
-        {
-          "word": "query",
-          "start": 5.446,
-          "end": 5.816
-        },
-        {
-          "word": "problem.",
-          "start": 5.816,
-          "end": 6.407
+          "word": "teams.",
+          "start": 10.75,
+          "end": 11.165
         }
       ],
       "startFrame": 0
@@ -130,669 +176,684 @@
     {
       "id": "scene_2",
       "type": "TerminalSplit",
-      "narration": "You write a loop to fetch users and their posts. Behind your back, the ORM runs an extra query for every single user. One query silently explodes into hundreds.",
+      "narration": "Traditional client-server databases spend ninety percent of their query time on network hops, TLS handshakes, and connection pools. SQLite runs inside your process, executing queries in twenty microseconds flat.",
       "props": {
-        "title": "THE N+1 EXPLOSION",
-        "badge": "PRODUCTION METRICS",
-        "highlightWord": "EXPLOSION",
+        "title": "NETWORK HOP TAX",
+        "badge": "LATENCY BREAKDOWN",
+        "highlightWord": "TAX",
         "underlineColor": "#f43f5e",
         "leftPane": {
-          "title": "ORM: fetch_users.py",
+          "title": "Cloud RDS (Postgres / MySQL)",
           "lines": [
             {
               "lineNum": "1",
-              "text": "users = User.query.all()"
+              "text": "App -> DNS & TLS Handshake: 4ms",
+              "type": "drift"
             },
             {
               "lineNum": "2",
-              "text": "for u in users:"
+              "text": "TCP Wire Serialization: 3ms",
+              "type": "drift"
             },
             {
               "lineNum": "3",
-              "text": "  print(u.profile.bio)"
+              "text": "Query Execution: 1ms"
+            },
+            {
+              "lineNum": "!",
+              "text": "TOTAL LATENCY = 8.0ms",
+              "type": "drift"
             }
           ],
-          "caption": "Innocent Application Code",
+          "caption": "90% of time spent on network wire",
           "stickFigure": {
             "pose": "confused",
-            "label": "Dev: 'Why 100% CPU?'"
+            "label": "Waiting on Network Socket..."
           }
         },
         "rightPane": {
-          "title": "Postgres Query Log",
+          "title": "Embedded SQLite (In-Process)",
           "lines": [
             {
               "lineNum": "1",
-              "text": "SELECT * FROM users;  -- 1 query"
+              "text": "App -> C Function Call: 0ms"
             },
             {
-              "lineNum": "!",
-              "text": "SELECT * FROM profile WHERE user_id=1;",
-              "type": "drift"
+              "lineNum": "2",
+              "text": "Direct Memory-Mapped Read: 20\u00b5s"
             },
             {
-              "lineNum": "!",
-              "text": "SELECT * FROM profile WHERE user_id=2;",
-              "type": "drift"
+              "lineNum": "3",
+              "text": "Zero Wire Serialization: 0ms"
             },
             {
-              "lineNum": "!",
-              "text": "... 99 MORE QUERIES SPAMMED!",
-              "type": "drift"
+              "lineNum": "\u2605",
+              "text": "TOTAL LATENCY = 0.02ms (400x FASTER)"
             }
           ],
-          "caption": "Database Connection Pool on Fire",
+          "caption": "Direct memory pointer access",
           "stickFigure": {
-            "pose": "laptop-night",
-            "label": "DBA @ 2am"
+            "pose": "celebrating",
+            "label": "Instant 0.02ms Response!"
           }
         },
-        "bottomText": "1 QUERY TURNED INTO 101 QUERIES!",
-        "bottomSubtext": "Network roundtrips choke your database connection pool."
+        "bottomText": "400X FASTER: ZERO NETWORK LATENCY!",
+        "bottomSubtext": "Eliminating network roundtrips beats any query index optimization."
       },
       "audioFile": "audio/scene_2.mp3",
-      "durationSec": 9.94,
-      "durationInFrames": 298,
+      "durationSec": 13.37,
+      "durationInFrames": 401,
       "words": [
         {
-          "word": "You",
+          "word": "Traditional",
           "start": 0.05,
-          "end": 0.267
+          "end": 0.83
         },
         {
-          "word": "write",
-          "start": 0.267,
-          "end": 0.628
+          "word": "client-server",
+          "start": 0.83,
+          "end": 1.751
         },
         {
-          "word": "a",
-          "start": 0.628,
-          "end": 0.7
+          "word": "databases",
+          "start": 1.751,
+          "end": 2.389
         },
         {
-          "word": "loop",
-          "start": 0.7,
-          "end": 0.989
+          "word": "spend",
+          "start": 2.389,
+          "end": 2.743
         },
         {
-          "word": "to",
-          "start": 0.989,
-          "end": 1.134
+          "word": "ninety",
+          "start": 2.743,
+          "end": 3.169
         },
         {
-          "word": "fetch",
-          "start": 1.134,
-          "end": 1.495
+          "word": "percent",
+          "start": 3.169,
+          "end": 3.665
         },
         {
-          "word": "users",
-          "start": 1.495,
-          "end": 1.856
-        },
-        {
-          "word": "and",
-          "start": 1.856,
-          "end": 2.073
+          "word": "of",
+          "start": 3.665,
+          "end": 3.807
         },
         {
           "word": "their",
-          "start": 2.073,
-          "end": 2.434
+          "start": 3.807,
+          "end": 4.161
         },
         {
-          "word": "posts.",
-          "start": 2.434,
-          "end": 2.867
+          "word": "query",
+          "start": 4.161,
+          "end": 4.515
         },
         {
-          "word": "Behind",
-          "start": 2.867,
-          "end": 3.301
+          "word": "time",
+          "start": 4.515,
+          "end": 4.799
         },
         {
-          "word": "your",
-          "start": 3.301,
-          "end": 3.59
+          "word": "on",
+          "start": 4.799,
+          "end": 4.941
         },
         {
-          "word": "back,",
-          "start": 3.59,
-          "end": 3.951
+          "word": "network",
+          "start": 4.941,
+          "end": 5.437
         },
         {
-          "word": "the",
-          "start": 3.951,
-          "end": 4.168
+          "word": "hops,",
+          "start": 5.437,
+          "end": 5.791
         },
         {
-          "word": "ORM",
-          "start": 4.168,
-          "end": 4.385
+          "word": "TLS",
+          "start": 5.791,
+          "end": 6.004
+        },
+        {
+          "word": "handshakes,",
+          "start": 6.004,
+          "end": 6.783
+        },
+        {
+          "word": "and",
+          "start": 6.783,
+          "end": 6.996
+        },
+        {
+          "word": "connection",
+          "start": 6.996,
+          "end": 7.705
+        },
+        {
+          "word": "pools.",
+          "start": 7.705,
+          "end": 8.13
+        },
+        {
+          "word": "SQLite",
+          "start": 8.13,
+          "end": 8.555
         },
         {
           "word": "runs",
-          "start": 4.385,
-          "end": 4.674
+          "start": 8.555,
+          "end": 8.839
         },
         {
-          "word": "an",
-          "start": 4.674,
-          "end": 4.818
+          "word": "inside",
+          "start": 8.839,
+          "end": 9.264
         },
         {
-          "word": "extra",
-          "start": 4.818,
-          "end": 5.179
+          "word": "your",
+          "start": 9.264,
+          "end": 9.548
         },
         {
-          "word": "query",
-          "start": 5.179,
-          "end": 5.54
+          "word": "process,",
+          "start": 9.548,
+          "end": 10.115
         },
         {
-          "word": "for",
-          "start": 5.54,
-          "end": 5.757
+          "word": "executing",
+          "start": 10.115,
+          "end": 10.753
         },
         {
-          "word": "every",
-          "start": 5.757,
-          "end": 6.118
-        },
-        {
-          "word": "single",
-          "start": 6.118,
-          "end": 6.552
-        },
-        {
-          "word": "user.",
-          "start": 6.552,
-          "end": 6.913
-        },
-        {
-          "word": "One",
-          "start": 6.913,
-          "end": 7.13
-        },
-        {
-          "word": "query",
-          "start": 7.13,
-          "end": 7.491
-        },
-        {
-          "word": "silently",
-          "start": 7.491,
-          "end": 8.069
-        },
-        {
-          "word": "explodes",
-          "start": 8.069,
-          "end": 8.647
-        },
-        {
-          "word": "into",
-          "start": 8.647,
-          "end": 8.936
-        },
-        {
-          "word": "hundreds.",
-          "start": 8.936,
-          "end": 9.586
-        }
-      ],
-      "startFrame": 203
-    },
-    {
-      "id": "scene_3",
-      "type": "CodeExplainer",
-      "narration": "The fix is eager loading. Using select related or prefetch tells the database to fetch relational data in bulk, replacing a hundred roundtrips with a single fast join.",
-      "props": {
-        "language": "python",
-        "filename": "optimized_query.py",
-        "code": "# \u274c BAD: Triggers N+1 Queries\nusers = User.query.all()\nfor user in users:\n    print(user.profile.bio)\n\n# \u2705 FAST: Eager Loading with JOIN\nusers = User.query.options(\n    joinedload(User.profile)\n).all()",
-        "highlightLines": [
-          7,
-          8,
-          9
-        ],
-        "lineNotes": [
-          {
-            "line": 2,
-            "note": "Spams a query per loop iteration"
-          },
-          {
-            "line": 7,
-            "note": "Eager loads profile in 1 single JOIN query"
-          }
-        ]
-      },
-      "audioFile": "audio/scene_3.mp3",
-      "durationSec": 10.47,
-      "durationInFrames": 314,
-      "words": [
-        {
-          "word": "The",
-          "start": 0.05,
-          "end": 0.266
-        },
-        {
-          "word": "fix",
-          "start": 0.266,
-          "end": 0.482
-        },
-        {
-          "word": "is",
-          "start": 0.482,
-          "end": 0.625
-        },
-        {
-          "word": "eager",
-          "start": 0.625,
-          "end": 0.985
-        },
-        {
-          "word": "loading.",
-          "start": 0.985,
-          "end": 1.56
-        },
-        {
-          "word": "Using",
-          "start": 1.56,
-          "end": 1.92
-        },
-        {
-          "word": "select",
-          "start": 1.92,
-          "end": 2.352
-        },
-        {
-          "word": "related",
-          "start": 2.352,
-          "end": 2.855
-        },
-        {
-          "word": "or",
-          "start": 2.855,
-          "end": 2.999
-        },
-        {
-          "word": "prefetch",
-          "start": 2.999,
-          "end": 3.574
-        },
-        {
-          "word": "tells",
-          "start": 3.574,
-          "end": 3.934
-        },
-        {
-          "word": "the",
-          "start": 3.934,
-          "end": 4.15
-        },
-        {
-          "word": "database",
-          "start": 4.15,
-          "end": 4.725
-        },
-        {
-          "word": "to",
-          "start": 4.725,
-          "end": 4.869
-        },
-        {
-          "word": "fetch",
-          "start": 4.869,
-          "end": 5.229
-        },
-        {
-          "word": "relational",
-          "start": 5.229,
-          "end": 5.948
-        },
-        {
-          "word": "data",
-          "start": 5.948,
-          "end": 6.235
+          "word": "queries",
+          "start": 10.753,
+          "end": 11.249
         },
         {
           "word": "in",
-          "start": 6.235,
-          "end": 6.379
+          "start": 11.249,
+          "end": 11.39
         },
         {
-          "word": "bulk,",
-          "start": 6.379,
-          "end": 6.739
+          "word": "twenty",
+          "start": 11.39,
+          "end": 11.816
         },
         {
-          "word": "replacing",
-          "start": 6.739,
-          "end": 7.386
+          "word": "microseconds",
+          "start": 11.816,
+          "end": 12.666
         },
         {
-          "word": "a",
-          "start": 7.386,
-          "end": 7.458
+          "word": "flat.",
+          "start": 12.666,
+          "end": 13.021
+        }
+      ],
+      "startFrame": 345
+    },
+    {
+      "id": "scene_3",
+      "type": "ArchitectureFlow",
+      "narration": "With modern distributed tools like LiteFS and Turso, write-ahead logs replicate continuously to worldwide edge instances. Your app reads locally with zero latency, while writes synchronize seamlessly.",
+      "props": {
+        "title": "Global Edge Replication Flow",
+        "steps": [
+          {
+            "title": "Edge HTTP Request",
+            "desc": "User hits Tokyo or London edge server",
+            "icon": "server"
+          },
+          {
+            "title": "In-Process Read",
+            "desc": "SQLite reads local replica in 20 microseconds",
+            "icon": "cpu"
+          },
+          {
+            "title": "LiteFS WAL Sync",
+            "desc": "Write-ahead logs stream async across cluster",
+            "icon": "cloud"
+          },
+          {
+            "title": "Instant Consensus",
+            "desc": "Primary node commits globally with zero lockup",
+            "icon": "check"
+          }
+        ],
+        "activeStepIndex": 1
+      },
+      "audioFile": "audio/scene_3.mp3",
+      "durationSec": 12.99,
+      "durationInFrames": 390,
+      "words": [
+        {
+          "word": "With",
+          "start": 0.05,
+          "end": 0.339
         },
         {
-          "word": "hundred",
-          "start": 7.458,
-          "end": 7.962
+          "word": "modern",
+          "start": 0.339,
+          "end": 0.773
         },
         {
-          "word": "roundtrips",
-          "start": 7.962,
-          "end": 8.681
+          "word": "distributed",
+          "start": 0.773,
+          "end": 1.569
+        },
+        {
+          "word": "tools",
+          "start": 1.569,
+          "end": 1.931
+        },
+        {
+          "word": "like",
+          "start": 1.931,
+          "end": 2.22
+        },
+        {
+          "word": "LiteFS",
+          "start": 2.22,
+          "end": 2.654
+        },
+        {
+          "word": "and",
+          "start": 2.654,
+          "end": 2.871
+        },
+        {
+          "word": "Turso,",
+          "start": 2.871,
+          "end": 3.305
+        },
+        {
+          "word": "write-ahead",
+          "start": 3.305,
+          "end": 4.101
+        },
+        {
+          "word": "logs",
+          "start": 4.101,
+          "end": 4.39
+        },
+        {
+          "word": "replicate",
+          "start": 4.39,
+          "end": 5.041
+        },
+        {
+          "word": "continuously",
+          "start": 5.041,
+          "end": 5.909
+        },
+        {
+          "word": "to",
+          "start": 5.909,
+          "end": 6.054
+        },
+        {
+          "word": "worldwide",
+          "start": 6.054,
+          "end": 6.705
+        },
+        {
+          "word": "edge",
+          "start": 6.705,
+          "end": 6.994
+        },
+        {
+          "word": "instances.",
+          "start": 6.994,
+          "end": 7.718
+        },
+        {
+          "word": "Your",
+          "start": 7.718,
+          "end": 8.007
+        },
+        {
+          "word": "app",
+          "start": 8.007,
+          "end": 8.224
+        },
+        {
+          "word": "reads",
+          "start": 8.224,
+          "end": 8.586
+        },
+        {
+          "word": "locally",
+          "start": 8.586,
+          "end": 9.092
         },
         {
           "word": "with",
-          "start": 8.681,
-          "end": 8.969
+          "start": 9.092,
+          "end": 9.381
         },
         {
-          "word": "a",
-          "start": 8.969,
-          "end": 9.04
+          "word": "zero",
+          "start": 9.381,
+          "end": 9.671
         },
         {
-          "word": "single",
-          "start": 9.04,
-          "end": 9.472
+          "word": "latency,",
+          "start": 9.671,
+          "end": 10.25
         },
         {
-          "word": "fast",
-          "start": 9.472,
-          "end": 9.76
+          "word": "while",
+          "start": 10.25,
+          "end": 10.611
         },
         {
-          "word": "join.",
-          "start": 9.76,
-          "end": 10.119
+          "word": "writes",
+          "start": 10.611,
+          "end": 11.045
+        },
+        {
+          "word": "synchronize",
+          "start": 11.045,
+          "end": 11.841
+        },
+        {
+          "word": "seamlessly.",
+          "start": 11.841,
+          "end": 12.637
         }
       ],
-      "startFrame": 501
+      "startFrame": 746
     },
     {
       "id": "scene_4",
       "type": "ClassifierCard",
-      "narration": "With eager loading and composite indexing, query execution drops from nearly a full second down to twelve milliseconds. Always check your execution plan.",
+      "narration": "Unless you process hundreds of thousands of concurrent writes every second, embedded SQLite delivers blistering query throughput, microscopic memory usage, and zero cloud hosting bills.",
       "props": {
-        "title": "PERFORMANCE BENCHMARK",
-        "badge": "1,000 CONCURRENT USERS",
+        "title": "PRODUCTION BENCHMARK",
+        "badge": "100,000 QUERIES / SEC",
         "highlightWord": "BENCHMARK",
         "underlineColor": "#10b981",
         "mode": "comparison",
         "leftModel": {
-          "name": "Naive N+1 Query",
+          "name": "Cloud DB Cluster",
           "iconType": "doc",
           "accentColor": "#f43f5e",
           "bars": [
             {
-              "label": "Latency (s)",
-              "value": 0.92,
+              "label": "Query Latency (ms)",
+              "value": 0.85,
               "color": "#f43f5e"
             },
             {
-              "label": "DB Queries",
-              "value": 1.0,
-              "color": "#f43f5e"
-            },
-            {
-              "label": "CPU Usage",
+              "label": "Monthly Hosting ($)",
               "value": 0.95,
+              "color": "#f43f5e"
+            },
+            {
+              "label": "Setup Complexity",
+              "value": 0.9,
               "color": "#f43f5e"
             }
           ]
         },
         "rightModel": {
-          "name": "Eager Loaded JOIN",
+          "name": "Embedded SQLite",
           "iconType": "cube",
           "accentColor": "#10b981",
           "bars": [
             {
-              "label": "Latency (s)",
+              "label": "Query Latency (ms)",
               "value": 0.02,
               "color": "#10b981"
             },
             {
-              "label": "DB Queries",
-              "value": 0.02,
+              "label": "Monthly Hosting ($)",
+              "value": 0.01,
               "color": "#10b981"
             },
             {
-              "label": "CPU Usage",
-              "value": 0.08,
+              "label": "Setup Complexity",
+              "value": 0.05,
               "color": "#10b981"
             }
           ]
         }
       },
       "audioFile": "audio/scene_4.mp3",
-      "durationSec": 9.19,
-      "durationInFrames": 276,
+      "durationSec": 11.51,
+      "durationInFrames": 345,
       "words": [
         {
-          "word": "With",
+          "word": "Unless",
           "start": 0.05,
-          "end": 0.318
+          "end": 0.464
         },
         {
-          "word": "eager",
-          "start": 0.318,
-          "end": 0.654
+          "word": "you",
+          "start": 0.464,
+          "end": 0.671
         },
         {
-          "word": "loading",
-          "start": 0.654,
-          "end": 1.124
+          "word": "process",
+          "start": 0.671,
+          "end": 1.155
         },
         {
-          "word": "and",
-          "start": 1.124,
-          "end": 1.325
+          "word": "hundreds",
+          "start": 1.155,
+          "end": 1.707
         },
         {
-          "word": "composite",
-          "start": 1.325,
-          "end": 1.929
+          "word": "of",
+          "start": 1.707,
+          "end": 1.845
         },
         {
-          "word": "indexing,",
-          "start": 1.929,
-          "end": 2.532
+          "word": "thousands",
+          "start": 1.845,
+          "end": 2.466
+        },
+        {
+          "word": "of",
+          "start": 2.466,
+          "end": 2.604
+        },
+        {
+          "word": "concurrent",
+          "start": 2.604,
+          "end": 3.295
+        },
+        {
+          "word": "writes",
+          "start": 3.295,
+          "end": 3.709
+        },
+        {
+          "word": "every",
+          "start": 3.709,
+          "end": 4.054
+        },
+        {
+          "word": "second,",
+          "start": 4.054,
+          "end": 4.537
+        },
+        {
+          "word": "embedded",
+          "start": 4.537,
+          "end": 5.09
+        },
+        {
+          "word": "SQLite",
+          "start": 5.09,
+          "end": 5.504
+        },
+        {
+          "word": "delivers",
+          "start": 5.504,
+          "end": 6.056
+        },
+        {
+          "word": "blistering",
+          "start": 6.056,
+          "end": 6.746
         },
         {
           "word": "query",
-          "start": 2.532,
-          "end": 2.868
+          "start": 6.746,
+          "end": 7.092
         },
         {
-          "word": "execution",
-          "start": 2.868,
-          "end": 3.472
+          "word": "throughput,",
+          "start": 7.092,
+          "end": 7.851
         },
         {
-          "word": "drops",
-          "start": 3.472,
-          "end": 3.807
+          "word": "microscopic",
+          "start": 7.851,
+          "end": 8.61
         },
         {
-          "word": "from",
-          "start": 3.807,
-          "end": 4.076
+          "word": "memory",
+          "start": 8.61,
+          "end": 9.025
         },
         {
-          "word": "nearly",
-          "start": 4.076,
-          "end": 4.478
+          "word": "usage,",
+          "start": 9.025,
+          "end": 9.439
         },
         {
-          "word": "a",
-          "start": 4.478,
-          "end": 4.545
+          "word": "and",
+          "start": 9.439,
+          "end": 9.646
         },
         {
-          "word": "full",
-          "start": 4.545,
-          "end": 4.814
+          "word": "zero",
+          "start": 9.646,
+          "end": 9.922
         },
         {
-          "word": "second",
-          "start": 4.814,
-          "end": 5.216
+          "word": "cloud",
+          "start": 9.922,
+          "end": 10.267
         },
         {
-          "word": "down",
-          "start": 5.216,
-          "end": 5.485
+          "word": "hosting",
+          "start": 10.267,
+          "end": 10.75
         },
         {
-          "word": "to",
-          "start": 5.485,
-          "end": 5.619
-        },
-        {
-          "word": "twelve",
-          "start": 5.619,
-          "end": 6.021
-        },
-        {
-          "word": "milliseconds.",
-          "start": 6.021,
-          "end": 6.894
-        },
-        {
-          "word": "Always",
-          "start": 6.894,
-          "end": 7.296
-        },
-        {
-          "word": "check",
-          "start": 7.296,
-          "end": 7.632
-        },
-        {
-          "word": "your",
-          "start": 7.632,
-          "end": 7.9
-        },
-        {
-          "word": "execution",
-          "start": 7.9,
-          "end": 8.504
-        },
-        {
-          "word": "plan.",
-          "start": 8.504,
-          "end": 8.839
+          "word": "bills.",
+          "start": 10.75,
+          "end": 11.165
         }
       ],
-      "startFrame": 815
+      "startFrame": 1136
     },
     {
       "id": "scene_5",
       "type": "OutroCard",
-      "narration": "Drop a like, subscribe for daily software engineering deep dives, and follow me on Twitter at mashukjim!",
+      "narration": "Hit that like button, subscribe for daily backend architecture breakthroughs, and follow me on Twitter at mashukjim!",
       "props": {
-        "title": "Speed Up Your Backend!",
-        "subtitle": "Subscribe for daily database & architecture deep dives",
+        "title": "Simplify Your Stack!",
+        "subtitle": "Subscribe for daily database & backend engineering breakthroughs",
         "twitterHandle": "@mashukjim",
         "youtubePrompt": "Like & Subscribe"
       },
       "audioFile": "audio/scene_5.mp3",
-      "durationSec": 6.37,
-      "durationInFrames": 191,
+      "durationSec": 6.78,
+      "durationInFrames": 203,
       "words": [
         {
-          "word": "Drop",
+          "word": "Hit",
           "start": 0.05,
-          "end": 0.322
+          "end": 0.241
         },
         {
-          "word": "a",
-          "start": 0.322,
-          "end": 0.389
+          "word": "that",
+          "start": 0.241,
+          "end": 0.497
         },
         {
-          "word": "like,",
-          "start": 0.389,
-          "end": 0.729
+          "word": "like",
+          "start": 0.497,
+          "end": 0.752
+        },
+        {
+          "word": "button,",
+          "start": 0.752,
+          "end": 1.198
         },
         {
           "word": "subscribe",
-          "start": 0.729,
-          "end": 1.34
+          "start": 1.198,
+          "end": 1.772
         },
         {
           "word": "for",
-          "start": 1.34,
-          "end": 1.543
+          "start": 1.772,
+          "end": 1.964
         },
         {
           "word": "daily",
-          "start": 1.543,
-          "end": 1.883
+          "start": 1.964,
+          "end": 2.283
         },
         {
-          "word": "software",
-          "start": 1.883,
-          "end": 2.426
+          "word": "backend",
+          "start": 2.283,
+          "end": 2.729
         },
         {
-          "word": "engineering",
-          "start": 2.426,
-          "end": 3.172
+          "word": "architecture",
+          "start": 2.729,
+          "end": 3.494
         },
         {
-          "word": "deep",
-          "start": 3.172,
-          "end": 3.444
-        },
-        {
-          "word": "dives,",
-          "start": 3.444,
-          "end": 3.851
+          "word": "breakthroughs,",
+          "start": 3.494,
+          "end": 4.387
         },
         {
           "word": "and",
-          "start": 3.851,
-          "end": 4.055
+          "start": 4.387,
+          "end": 4.579
         },
         {
           "word": "follow",
-          "start": 4.055,
-          "end": 4.462
+          "start": 4.579,
+          "end": 4.962
         },
         {
           "word": "me",
-          "start": 4.462,
-          "end": 4.598
+          "start": 4.962,
+          "end": 5.089
         },
         {
           "word": "on",
-          "start": 4.598,
-          "end": 4.734
+          "start": 5.089,
+          "end": 5.217
         },
         {
           "word": "Twitter",
-          "start": 4.734,
-          "end": 5.209
+          "start": 5.217,
+          "end": 5.663
         },
         {
           "word": "at",
-          "start": 5.209,
-          "end": 5.345
+          "start": 5.663,
+          "end": 5.791
         },
         {
           "word": "mashukjim!",
-          "start": 5.345,
-          "end": 6.023
+          "start": 5.791,
+          "end": 6.429
         }
       ],
-      "startFrame": 1091
+      "startFrame": 1481
     }
   ],
-  "totalDurationFrames": 1282,
-  "totalDurationSec": 42.73
+  "totalDurationFrames": 1684,
+  "totalDurationSec": 56.13
 }

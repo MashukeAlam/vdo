@@ -1,0 +1,118 @@
+{
+  "title": "Why SQLite in Production Is Actually Genius",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Are you still paying thousands for managed cloud databases when your entire dataset easily fits in memory? SQLite in production is making a massive comeback across modern engineering teams.",
+      "props": {
+        "title": "SQLite in Production",
+        "subtitle": "Why embedding your database inside your app is the ultimate 2026 architecture",
+        "badge": "DATABASE ARCHITECTURE",
+        "tags": ["SQLite", "Database", "Architecture", "Backend", "Performance", "WebDev"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "TerminalSplit",
+      "narration": "Traditional client-server databases spend ninety percent of their query time on network hops, TLS handshakes, and connection pools. SQLite runs inside your process, executing queries in twenty microseconds flat.",
+      "props": {
+        "title": "NETWORK HOP TAX",
+        "badge": "LATENCY BREAKDOWN",
+        "highlightWord": "TAX",
+        "underlineColor": "#f43f5e",
+        "leftPane": {
+          "title": "Cloud RDS (Postgres / MySQL)",
+          "lines": [
+            { "lineNum": "1", "text": "App -> DNS & TLS Handshake: 4ms", "type": "drift" },
+            { "lineNum": "2", "text": "TCP Wire Serialization: 3ms", "type": "drift" },
+            { "lineNum": "3", "text": "Query Execution: 1ms" },
+            { "lineNum": "!", "text": "TOTAL LATENCY = 8.0ms", "type": "drift" }
+          ],
+          "caption": "90% of time spent on network wire",
+          "stickFigure": {
+            "pose": "confused",
+            "label": "Waiting on Network Socket..."
+          }
+        },
+        "rightPane": {
+          "title": "Embedded SQLite (In-Process)",
+          "lines": [
+            { "lineNum": "1", "text": "App -> C Function Call: 0ms" },
+            { "lineNum": "2", "text": "Direct Memory-Mapped Read: 20µs" },
+            { "lineNum": "3", "text": "Zero Wire Serialization: 0ms" },
+            { "lineNum": "★", "text": "TOTAL LATENCY = 0.02ms (400x FASTER)" }
+          ],
+          "caption": "Direct memory pointer access",
+          "stickFigure": {
+            "pose": "celebrating",
+            "label": "Instant 0.02ms Response!"
+          }
+        },
+        "bottomText": "400X FASTER: ZERO NETWORK LATENCY!",
+        "bottomSubtext": "Eliminating network roundtrips beats any query index optimization."
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ArchitectureFlow",
+      "narration": "With modern distributed tools like LiteFS and Turso, write-ahead logs replicate continuously to worldwide edge instances. Your app reads locally with zero latency, while writes synchronize seamlessly.",
+      "props": {
+        "title": "Global Edge Replication Flow",
+        "steps": [
+          { "title": "Edge HTTP Request", "desc": "User hits Tokyo or London edge server", "icon": "server" },
+          { "title": "In-Process Read", "desc": "SQLite reads local replica in 20 microseconds", "icon": "cpu" },
+          { "title": "LiteFS WAL Sync", "desc": "Write-ahead logs stream async across cluster", "icon": "cloud" },
+          { "title": "Instant Consensus", "desc": "Primary node commits globally with zero lockup", "icon": "check" }
+        ],
+        "activeStepIndex": 1
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "ClassifierCard",
+      "narration": "Unless you process hundreds of thousands of concurrent writes every second, embedded SQLite delivers blistering query throughput, microscopic memory usage, and zero cloud hosting bills.",
+      "props": {
+        "title": "PRODUCTION BENCHMARK",
+        "badge": "100,000 QUERIES / SEC",
+        "highlightWord": "BENCHMARK",
+        "underlineColor": "#10b981",
+        "mode": "comparison",
+        "leftModel": {
+          "name": "Cloud DB Cluster",
+          "iconType": "doc",
+          "accentColor": "#f43f5e",
+          "bars": [
+            { "label": "Query Latency (ms)", "value": 0.85, "color": "#f43f5e" },
+            { "label": "Monthly Hosting ($)", "value": 0.95, "color": "#f43f5e" },
+            { "label": "Setup Complexity", "value": 0.90, "color": "#f43f5e" }
+          ]
+        },
+        "rightModel": {
+          "name": "Embedded SQLite",
+          "iconType": "cube",
+          "accentColor": "#10b981",
+          "bars": [
+            { "label": "Query Latency (ms)", "value": 0.02, "color": "#10b981" },
+            { "label": "Monthly Hosting ($)", "value": 0.01, "color": "#10b981" },
+            { "label": "Setup Complexity", "value": 0.05, "color": "#10b981" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "OutroCard",
+      "narration": "Hit that like button, subscribe for daily backend architecture breakthroughs, and follow me on Twitter at mashukjim!",
+      "props": {
+        "title": "Simplify Your Stack!",
+        "subtitle": "Subscribe for daily database & backend engineering breakthroughs",
+        "twitterHandle": "@mashukjim",
+        "youtubePrompt": "Like & Subscribe"
+      }
+    }
+  ]
+}
