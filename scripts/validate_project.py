@@ -16,6 +16,9 @@ VALID_SCENE_TYPES = {
     "ComparisonCard",
     "SummaryList",
     "OutroCard",
+    "TerminalSplit",
+    "ClassifierCard",
+    "ClusterGrid",
 }
 
 def estimate_scene_duration(narration: str, speed: float = 1.05) -> float:

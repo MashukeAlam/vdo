@@ -80,6 +80,9 @@ interface SceneData {
 | `MathVisualizer` | LaTeX formula & variables | `title`, `formula` (LaTeX), `explanation`, `variables` (`[{ symbol, meaning }]`) |
 | `SummaryList` | Key takeaways | `title`, `items` (array of strings) |
 | `OutroCard` | Like, Subscribe & Twitter CTA | `title`, `subtitle`, `twitterHandle` (`"@mashukjim"`), `youtubePrompt` (`"Like & Subscribe"`) |
+| `TerminalSplit` | Dual terminal diffs & stick figures | `title`, `badge`, `cluster` (nodes/pods), `leftPane`, `rightPane` (diffs), `bottomText` |
+| `ClassifierCard` | Ticket triage & probability sliders | `title`, `mode` (`"ticket-flow"` or `"comparison"`), `ticket`, `modelName`, `bars` |
+| `ClusterGrid` | K8s 40-node grid & control plane | `title`, `mode` (`"hex-grid"` or `"layers"`), `nodeCount`, `controlPlane`, `workerNodes` |
 
 ---
 

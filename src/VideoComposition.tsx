@@ -9,6 +9,9 @@ import { MathVisualizer } from './components/MathVisualizer';
 import { ComparisonCard } from './components/ComparisonCard';
 import { SummaryList } from './components/SummaryList';
 import { OutroCard } from './components/OutroCard';
+import { TerminalSplit } from './components/TerminalSplit';
+import { ClassifierCard } from './components/ClassifierCard';
+import { ClusterGrid } from './components/ClusterGrid';
 import { SubtitleOverlay } from './components/SubtitleOverlay';
 
 export const VideoComposition: React.FC<{ project: ProjectData }> = ({ project }) => {
@@ -30,6 +33,12 @@ export const VideoComposition: React.FC<{ project: ProjectData }> = ({ project }
         return <SummaryList {...(scene.props as any)} aspectRatio={aspectRatio} />;
       case 'OutroCard':
         return <OutroCard {...(scene.props as any)} aspectRatio={aspectRatio} />;
+      case 'TerminalSplit':
+        return <TerminalSplit {...(scene.props as any)} aspectRatio={aspectRatio} />;
+      case 'ClassifierCard':
+        return <ClassifierCard {...(scene.props as any)} aspectRatio={aspectRatio} />;
+      case 'ClusterGrid':
+        return <ClusterGrid {...(scene.props as any)} aspectRatio={aspectRatio} />;
       default:
         return null;
     }

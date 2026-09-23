@@ -10,6 +10,8 @@ module.exports = {
       },
       fontFamily: {
         code: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+        marker: ['"Permanent Marker"', 'cursive'],
+        handwriting: ['Caveat', 'cursive'],
       },
     },
   },

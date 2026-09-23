@@ -208,6 +208,88 @@ Displays high-converting animated action cards prompting viewers to Like, Subscr
 }
 ```
 
+### 8. `TerminalSplit` (Dual Windows, Diffs & Stick Figures)
+Displays side-by-side terminal panes with diff rows, optional cluster status box, and animated stick figures at laptops or running commands.
+```json
+{
+  "id": "scene_drift",
+  "type": "TerminalSplit",
+  "narration": "At 2 a.m., an engineer manually patches production. Git thinks there are 3 replicas, but live prod has 7.",
+  "props": {
+    "title": "DRIFT",
+    "badge": "STEP 1: THE MANUAL PATCH",
+    "underlineColor": "#f43f5e",
+    "leftPane": {
+      "title": "git: deploy.yaml",
+      "lines": [
+        { "lineNum": "1", "text": "kind: Deployment" },
+        { "lineNum": "2", "text": "replicas: 3" }
+      ],
+      "stickFigure": { "pose": "laptop-night", "label": "① SSH @ 2am" }
+    },
+    "rightPane": {
+      "title": "kubectl get -o yaml",
+      "lines": [
+        { "lineNum": "1", "text": "kind: Deployment" },
+        { "lineNum": "!", "text": "replicas: 7 <- drift", "type": "drift" }
+      ],
+      "stickFigure": { "pose": "standing", "label": "② kubectl edit" }
+    },
+    "bottomText": "AND NOBODY KNOWS...",
+    "bottomSubtext": "Until the next deployment crashes production."
+  }
+}
+```
+
+### 9. `ClassifierCard` (Ticket Ingestion & Probability Sliders)
+Displays a customer ticket / query card connecting to a model badge and animated confidence/probability progress bars.
+```json
+{
+  "id": "scene_classifier",
+  "type": "ClassifierCard",
+  "narration": "When a production alert triggers, classification models immediately score incident severity.",
+  "props": {
+    "title": "INCIDENT TELEMETRY",
+    "mode": "ticket-flow",
+    "ticket": {
+      "authorName": "SRE Alert System",
+      "badge": "CRITICAL",
+      "message": "Node replica mismatch detected in production cluster."
+    },
+    "modelName": "GitOps Agent",
+    "metricCategory": "SEVERITY SCORE",
+    "bars": [
+      { "label": "CRITICAL", "value": 0.94, "color": "#f43f5e" },
+      { "label": "WARNING", "value": 0.06, "color": "#38bdf8" }
+    ]
+  }
+}
+```
+
+### 10. `ClusterGrid` (Kubernetes 40-Node Grid & Architecture Layers)
+Renders a cluster grid of 40 hexagonal pods or a layered diagram showing Control Plane (Brain) vs Worker Nodes (Muscle).
+```json
+{
+  "id": "scene_cluster",
+  "type": "ClusterGrid",
+  "narration": "Standard CD pushes code blindly. GitOps continuously reconciles live nodes back to Git truth.",
+  "props": {
+    "title": "THE RECONCILIATION LOOP",
+    "mode": "layers",
+    "controlPlane": {
+      "title": "CONTROL PLANE",
+      "subtitle": "— THE BRAIN",
+      "components": [{ "name": "API SERVER", "iconLabel": "API" }]
+    },
+    "workerNodes": {
+      "title": "WORKER NODES",
+      "subtitle": "— THE MUSCLE",
+      "racks": [{ "rackName": "NODE 1", "pods": [{ "name": "p1", "color": "#06b6d4" }] }]
+    }
+  }
+}
+```
+
 ---
 
 ## 🎯 Scripting Principles for Viral Tech Content

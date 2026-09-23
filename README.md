@@ -28,6 +28,9 @@ You can prompt for any combination of the following scenes:
 5. **`ComparisonCard`**: Comparative breakdown (e.g. CPU vs GPU, Full Fine-Tuning vs LoRA, REST vs gRPC).
 6. **`SummaryList`**: Key takeaways and recap with staggered animated bullet points.
 7. **`OutroCard`**: High-converting call-to-action with animated Like & Subscribe cards and Twitter / X follow button (`@mashukjim`).
+8. **`TerminalSplit`**: Side-by-side terminal windows with macOS window dots, diff highlights (`+ added`, `! drift`), cluster status pills, and animated developer stick figures.
+9. **`ClassifierCard`**: Support ticket / prompt ingestion card connecting downward to a model badge and animated confidence/probability slider bars.
+10. **`ClusterGrid`**: Infrastructure diagrams with 40-node Kubernetes hexagonal pod grids or layered Control Plane (Brain) vs Worker Nodes (Muscle).
 
 ---
 

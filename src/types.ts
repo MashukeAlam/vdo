@@ -13,7 +13,10 @@ export type SceneType =
   | 'MathVisualizer'
   | 'ComparisonCard'
   | 'SummaryList'
-  | 'OutroCard';
+  | 'OutroCard'
+  | 'TerminalSplit'
+  | 'ClassifierCard'
+  | 'ClusterGrid';
 
 export interface TitleCardProps {
   title: string;
@@ -70,6 +73,46 @@ export interface OutroCardProps {
   youtubePrompt?: string;
 }
 
+export interface TerminalSplitProps {
+  title?: string;
+  badge?: string;
+  highlightWord?: string;
+  underlineColor?: string;
+  cluster?: any;
+  leftPane: any;
+  rightPane?: any;
+  bottomText?: string;
+  bottomSubtext?: string;
+}
+
+export interface ClassifierCardProps {
+  title?: string;
+  badge?: string;
+  highlightWord?: string;
+  underlineColor?: string;
+  mode?: 'ticket-flow' | 'comparison';
+  ticket?: any;
+  modelName?: string;
+  metricCategory?: string;
+  bars?: any[];
+  leftModel?: any;
+  rightModel?: any;
+}
+
+export interface ClusterGridProps {
+  title?: string;
+  badge?: string;
+  highlightWord?: string;
+  underlineColor?: string;
+  mode?: 'hex-grid' | 'layers';
+  clusterName?: string;
+  nodeCount?: number;
+  activeNodeIndex?: number;
+  stickFigureCaption?: string;
+  controlPlane?: any;
+  workerNodes?: any;
+}
+
 export type SceneProps =
   | TitleCardProps
   | CodeExplainerProps
@@ -77,7 +120,10 @@ export type SceneProps =
   | MathVisualizerProps
   | ComparisonCardProps
   | SummaryListProps
-  | OutroCardProps;
+  | OutroCardProps
+  | TerminalSplitProps
+  | ClassifierCardProps
+  | ClusterGridProps;
 
 export interface SceneData {
   id: string;

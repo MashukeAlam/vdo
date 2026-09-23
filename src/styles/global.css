@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Permanent+Marker&family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800;900&display=swap');
 @import 'katex/dist/katex.min.css';
 @import '@shikijs/magic-move/dist/style.css';
 

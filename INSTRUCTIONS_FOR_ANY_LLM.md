@@ -66,6 +66,18 @@ You can only use these 6 component types:
    - Action cards prompting viewers to Like, Subscribe, and Follow on Twitter/X.
    - Props: `title` (string), `subtitle` (string), `twitterHandle` (string, default `"@mashukjim"`), `youtubePrompt` (string, default `"Like & Subscribe"`)
 
+8. `TerminalSplit`:
+   - Dual-window terminal diff view with macOS header dots, diff rows (`+`, `-`, `! drift`), cluster status pills, and animated developer stick figures (`SSH @ 2am`).
+   - Props: `title`, `badge`, `cluster`, `leftPane`, `rightPane`, `bottomText`, `bottomSubtext`
+
+9. `ClassifierCard`:
+   - Customer ticket card / query input connecting downward to a model badge (e.g. Jev) and animated probability/confidence slider bars.
+   - Props: `title`, `mode` (`"ticket-flow"` or `"comparison"`), `ticket`, `modelName`, `metricCategory`, `bars`
+
+10. `ClusterGrid`:
+   - Visual infrastructure diagrams: 40-node Kubernetes hexagonal pod grid or multi-layer Control Plane (Brain) vs Worker Nodes (Muscle).
+   - Props: `title`, `mode` (`"hex-grid"` or `"layers"`), `clusterName`, `nodeCount`, `controlPlane`, `workerNodes`
+
 4. **Mandatory Outro & Social CTA**:
    - Every video MUST end with an `OutroCard`.
    - The narration MUST instruct viewers to:

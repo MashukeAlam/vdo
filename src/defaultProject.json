@@ -1,5 +1,5 @@
 {
-  "title": "Why Vibecoding Ruined Web Design",
+  "title": "Why GitOps Even Exists: The Production Drift Nightmare",
   "aspectRatio": "9:16",
   "engine": "kokoro",
   "voice": "am_adam",
@@ -7,785 +7,813 @@
     {
       "id": "scene_1",
       "type": "TitleCard",
-      "narration": "Vibecoding is killing web design. Why does every single website built in 2026 look completely identical?",
+      "narration": "Why does GitOps even exist? CD was already solved by Jenkins and GitHub Actions. Here is the dirty secret.",
       "props": {
-        "title": "Why Vibecoding Ruined Web Design",
-        "subtitle": "The death of taste, soul, and intentional UI craft in the AI era",
-        "badge": "DESIGN CRITIQUE",
+        "title": "Why Does GitOps Even Exist?",
+        "subtitle": "Continuous Deployment was solved... until 2 AM SSH happened",
+        "badge": "DEVOPS ARCHITECTURE",
         "tags": [
-          "WebDesign",
-          "VibeCoding",
-          "UIUX",
-          "Frontend",
-          "TechOpinion"
+          "GitOps",
+          "Kubernetes",
+          "DevOps",
+          "CloudNative"
         ]
       },
       "audioFile": "audio/scene_1.mp3",
-      "durationSec": 7.57,
-      "durationInFrames": 227,
+      "durationSec": 6.99,
+      "durationInFrames": 210,
       "words": [
         {
-          "word": "Vibecoding",
-          "start": 0.05,
-          "end": 0.855
-        },
-        {
-          "word": "is",
-          "start": 0.855,
-          "end": 1.016
-        },
-        {
-          "word": "killing",
-          "start": 1.016,
-          "end": 1.58
-        },
-        {
-          "word": "web",
-          "start": 1.58,
-          "end": 1.822
-        },
-        {
-          "word": "design.",
-          "start": 1.822,
-          "end": 2.386
-        },
-        {
           "word": "Why",
-          "start": 2.386,
-          "end": 2.627
+          "start": 0.05,
+          "end": 0.275
         },
         {
           "word": "does",
-          "start": 2.627,
-          "end": 2.949
+          "start": 0.275,
+          "end": 0.574
         },
         {
-          "word": "every",
-          "start": 2.949,
-          "end": 3.352
+          "word": "GitOps",
+          "start": 0.574,
+          "end": 1.024
         },
         {
-          "word": "single",
-          "start": 3.352,
-          "end": 3.835
+          "word": "even",
+          "start": 1.024,
+          "end": 1.323
         },
         {
-          "word": "website",
-          "start": 3.835,
-          "end": 4.399
+          "word": "exist?",
+          "start": 1.323,
+          "end": 1.773
         },
         {
-          "word": "built",
-          "start": 4.399,
-          "end": 4.802
+          "word": "CD",
+          "start": 1.773,
+          "end": 1.923
         },
         {
-          "word": "in",
-          "start": 4.802,
-          "end": 4.963
+          "word": "was",
+          "start": 1.923,
+          "end": 2.147
         },
         {
-          "word": "2026",
-          "start": 4.963,
-          "end": 5.285
+          "word": "already",
+          "start": 2.147,
+          "end": 2.672
         },
         {
-          "word": "look",
-          "start": 5.285,
-          "end": 5.607
+          "word": "solved",
+          "start": 2.672,
+          "end": 3.121
         },
         {
-          "word": "completely",
-          "start": 5.607,
-          "end": 6.413
+          "word": "by",
+          "start": 3.121,
+          "end": 3.271
         },
         {
-          "word": "identical?",
-          "start": 6.413,
-          "end": 7.218
+          "word": "Jenkins",
+          "start": 3.271,
+          "end": 3.795
+        },
+        {
+          "word": "and",
+          "start": 3.795,
+          "end": 4.02
+        },
+        {
+          "word": "GitHub",
+          "start": 4.02,
+          "end": 4.47
+        },
+        {
+          "word": "Actions.",
+          "start": 4.47,
+          "end": 5.069
+        },
+        {
+          "word": "Here",
+          "start": 5.069,
+          "end": 5.369
+        },
+        {
+          "word": "is",
+          "start": 5.369,
+          "end": 5.518
+        },
+        {
+          "word": "the",
+          "start": 5.518,
+          "end": 5.743
+        },
+        {
+          "word": "dirty",
+          "start": 5.743,
+          "end": 6.118
+        },
+        {
+          "word": "secret.",
+          "start": 6.118,
+          "end": 6.642
         }
       ],
       "startFrame": 0
     },
     {
       "id": "scene_2",
-      "type": "ComparisonCard",
-      "narration": "When you vibe code with an LLM, you get generic design slop. Every app gets the exact same dark background, identical Bento grid cards, generic purple gradients, and Inter font. Zero soul, zero identity.",
+      "type": "TerminalSplit",
+      "narration": "At 2 a.m., an engineer SSHs into production and manually patches a container. Git thinks there are 3 replicas, but live prod has 7. That is configuration drift.",
       "props": {
-        "title": "Vibecoded Slop vs Design Taste",
-        "leftTitle": "Vibecoded Slop",
-        "leftPoints": [
-          "Generic purple & cyan glowing gradients",
-          "Identical copy-paste Bento grid cards",
-          "Inter font and bland typography",
-          "Built for prompt vibes, not human users"
-        ],
-        "rightTitle": "Designer Craft",
-        "rightPoints": [
-          "Bespoke editorial typography & character",
-          "Intentional white space and spatial rhythm",
-          "Distinct emotional resonance & brand identity",
-          "Purpose-built tactile micro-interactions"
-        ]
+        "title": "DRIFT",
+        "badge": "STEP 1: THE MANUAL PATCH",
+        "highlightWord": "DRIFT",
+        "underlineColor": "#f43f5e",
+        "cluster": {
+          "title": "PROD CLUSTER",
+          "badge": "DRIFT DETECTED",
+          "nodes": [
+            {
+              "name": "node-1",
+              "pods": [
+                {
+                  "id": "1",
+                  "color": "#06b6d4"
+                },
+                {
+                  "id": "2",
+                  "color": "#06b6d4"
+                }
+              ]
+            },
+            {
+              "name": "node-2",
+              "pods": [
+                {
+                  "id": "3",
+                  "color": "#8b5cf6"
+                },
+                {
+                  "id": "4",
+                  "color": "#8b5cf6"
+                }
+              ]
+            },
+            {
+              "name": "node-3",
+              "pods": [
+                {
+                  "id": "5",
+                  "color": "#f43f5e"
+                },
+                {
+                  "id": "6",
+                  "color": "#f43f5e"
+                }
+              ]
+            }
+          ]
+        },
+        "leftPane": {
+          "title": "git: deploy.yaml",
+          "lines": [
+            {
+              "lineNum": "1",
+              "text": "kind: Deployment"
+            },
+            {
+              "lineNum": "2",
+              "text": "replicas: 3",
+              "type": "normal"
+            },
+            {
+              "lineNum": "3",
+              "text": "image: app:v1.4.2"
+            },
+            {
+              "lineNum": "4",
+              "text": "env: (none)"
+            }
+          ],
+          "caption": "Intended Git State",
+          "stickFigure": {
+            "pose": "laptop-night",
+            "label": "\u2460 SSH @ 2am"
+          }
+        },
+        "rightPane": {
+          "title": "kubectl get -o yaml",
+          "lines": [
+            {
+              "lineNum": "1",
+              "text": "kind: Deployment"
+            },
+            {
+              "lineNum": "!",
+              "text": "replicas: 7 <- drift",
+              "type": "drift"
+            },
+            {
+              "lineNum": "!",
+              "text": "image: app:v1.4.1",
+              "type": "drift"
+            },
+            {
+              "lineNum": "!",
+              "text": "env: PATCHED",
+              "type": "drift"
+            }
+          ],
+          "caption": "Live Production State",
+          "stickFigure": {
+            "pose": "standing",
+            "label": "\u2461 kubectl edit"
+          }
+        },
+        "bottomText": "AND NOBODY KNOWS...",
+        "bottomSubtext": "Until the next deployment crashes production."
       },
       "audioFile": "audio/scene_2.mp3",
-      "durationSec": 13.63,
-      "durationInFrames": 409,
+      "durationSec": 11.11,
+      "durationInFrames": 333,
       "words": [
         {
-          "word": "When",
+          "word": "At",
           "start": 0.05,
-          "end": 0.361
+          "end": 0.211
         },
         {
-          "word": "you",
-          "start": 0.361,
-          "end": 0.595
+          "word": "2",
+          "start": 0.211,
+          "end": 0.292
         },
         {
-          "word": "vibe",
-          "start": 0.595,
-          "end": 0.906
-        },
-        {
-          "word": "code",
-          "start": 0.906,
-          "end": 1.217
-        },
-        {
-          "word": "with",
-          "start": 1.217,
-          "end": 1.528
+          "word": "a.m.,",
+          "start": 0.292,
+          "end": 0.694
         },
         {
           "word": "an",
-          "start": 1.528,
-          "end": 1.684
+          "start": 0.694,
+          "end": 0.855
         },
         {
-          "word": "LLM,",
-          "start": 1.684,
-          "end": 1.995
+          "word": "engineer",
+          "start": 0.855,
+          "end": 1.499
         },
         {
-          "word": "you",
-          "start": 1.995,
-          "end": 2.229
-        },
-        {
-          "word": "get",
-          "start": 2.229,
-          "end": 2.462
-        },
-        {
-          "word": "generic",
-          "start": 2.462,
-          "end": 3.007
-        },
-        {
-          "word": "design",
-          "start": 3.007,
-          "end": 3.473
-        },
-        {
-          "word": "slop.",
-          "start": 3.473,
-          "end": 3.862
-        },
-        {
-          "word": "Every",
-          "start": 3.862,
-          "end": 4.251
-        },
-        {
-          "word": "app",
-          "start": 4.251,
-          "end": 4.485
-        },
-        {
-          "word": "gets",
-          "start": 4.485,
-          "end": 4.796
-        },
-        {
-          "word": "the",
-          "start": 4.796,
-          "end": 5.029
-        },
-        {
-          "word": "exact",
-          "start": 5.029,
-          "end": 5.418
-        },
-        {
-          "word": "same",
-          "start": 5.418,
-          "end": 5.73
-        },
-        {
-          "word": "dark",
-          "start": 5.73,
-          "end": 6.041
-        },
-        {
-          "word": "background,",
-          "start": 6.041,
-          "end": 6.897
-        },
-        {
-          "word": "identical",
-          "start": 6.897,
-          "end": 7.597
-        },
-        {
-          "word": "Bento",
-          "start": 7.597,
-          "end": 7.986
-        },
-        {
-          "word": "grid",
-          "start": 7.986,
-          "end": 8.297
-        },
-        {
-          "word": "cards,",
-          "start": 8.297,
-          "end": 8.764
-        },
-        {
-          "word": "generic",
-          "start": 8.764,
-          "end": 9.309
-        },
-        {
-          "word": "purple",
-          "start": 9.309,
-          "end": 9.775
-        },
-        {
-          "word": "gradients,",
-          "start": 9.775,
-          "end": 10.554
-        },
-        {
-          "word": "and",
-          "start": 10.554,
-          "end": 10.787
-        },
-        {
-          "word": "Inter",
-          "start": 10.787,
-          "end": 11.176
-        },
-        {
-          "word": "font.",
-          "start": 11.176,
-          "end": 11.565
-        },
-        {
-          "word": "Zero",
-          "start": 11.565,
-          "end": 11.876
-        },
-        {
-          "word": "soul,",
-          "start": 11.876,
-          "end": 12.265
-        },
-        {
-          "word": "zero",
-          "start": 12.265,
-          "end": 12.576
-        },
-        {
-          "word": "identity.",
-          "start": 12.576,
-          "end": 13.277
-        }
-      ],
-      "startFrame": 227
-    },
-    {
-      "id": "scene_3",
-      "type": "ArchitectureFlow",
-      "narration": "LLMs have zero taste. They are trained on the statistical median of the internet. When millions of developers vibe code without design intent, the web collapses into a boring monoculture.",
-      "props": {
-        "title": "The Homogenization Loop",
-        "activeStepIndex": 1,
-        "steps": [
-          {
-            "title": "Prompt the Model",
-            "desc": "Ask AI to build a 'modern landing page'"
-          },
-          {
-            "title": "Statistical Median",
-            "desc": "AI outputs average Tailwind template"
-          },
-          {
-            "title": "Zero Personality",
-            "desc": "Another forgettable, clone website"
-          }
-        ]
-      },
-      "audioFile": "audio/scene_3.mp3",
-      "durationSec": 11.86,
-      "durationInFrames": 356,
-      "words": [
-        {
-          "word": "LLMs",
-          "start": 0.05,
-          "end": 0.34
-        },
-        {
-          "word": "have",
-          "start": 0.34,
-          "end": 0.63
-        },
-        {
-          "word": "zero",
-          "start": 0.63,
-          "end": 0.92
-        },
-        {
-          "word": "taste.",
-          "start": 0.92,
-          "end": 1.355
-        },
-        {
-          "word": "They",
-          "start": 1.355,
-          "end": 1.645
-        },
-        {
-          "word": "are",
-          "start": 1.645,
-          "end": 1.863
-        },
-        {
-          "word": "trained",
-          "start": 1.863,
-          "end": 2.37
-        },
-        {
-          "word": "on",
-          "start": 2.37,
-          "end": 2.515
-        },
-        {
-          "word": "the",
-          "start": 2.515,
-          "end": 2.733
-        },
-        {
-          "word": "statistical",
-          "start": 2.733,
-          "end": 3.53
-        },
-        {
-          "word": "median",
-          "start": 3.53,
-          "end": 3.965
-        },
-        {
-          "word": "of",
-          "start": 3.965,
-          "end": 4.11
-        },
-        {
-          "word": "the",
-          "start": 4.11,
-          "end": 4.328
-        },
-        {
-          "word": "internet.",
-          "start": 4.328,
-          "end": 4.98
-        },
-        {
-          "word": "When",
-          "start": 4.98,
-          "end": 5.27
-        },
-        {
-          "word": "millions",
-          "start": 5.27,
-          "end": 5.851
-        },
-        {
-          "word": "of",
-          "start": 5.851,
-          "end": 5.996
-        },
-        {
-          "word": "developers",
-          "start": 5.996,
-          "end": 6.721
-        },
-        {
-          "word": "vibe",
-          "start": 6.721,
-          "end": 7.011
-        },
-        {
-          "word": "code",
-          "start": 7.011,
-          "end": 7.301
-        },
-        {
-          "word": "without",
-          "start": 7.301,
-          "end": 7.808
-        },
-        {
-          "word": "design",
-          "start": 7.808,
-          "end": 8.243
-        },
-        {
-          "word": "intent,",
-          "start": 8.243,
-          "end": 8.751
-        },
-        {
-          "word": "the",
-          "start": 8.751,
-          "end": 8.968
-        },
-        {
-          "word": "web",
-          "start": 8.968,
-          "end": 9.186
-        },
-        {
-          "word": "collapses",
-          "start": 9.186,
-          "end": 9.838
+          "word": "SSHs",
+          "start": 1.499,
+          "end": 1.821
         },
         {
           "word": "into",
-          "start": 9.838,
-          "end": 10.128
+          "start": 1.821,
+          "end": 2.144
+        },
+        {
+          "word": "production",
+          "start": 2.144,
+          "end": 2.949
+        },
+        {
+          "word": "and",
+          "start": 2.949,
+          "end": 3.19
+        },
+        {
+          "word": "manually",
+          "start": 3.19,
+          "end": 3.835
+        },
+        {
+          "word": "patches",
+          "start": 3.835,
+          "end": 4.398
         },
         {
           "word": "a",
-          "start": 10.128,
-          "end": 10.201
+          "start": 4.398,
+          "end": 4.479
         },
         {
-          "word": "boring",
-          "start": 10.201,
-          "end": 10.636
+          "word": "container.",
+          "start": 4.479,
+          "end": 5.284
         },
         {
-          "word": "monoculture.",
-          "start": 10.636,
-          "end": 11.506
+          "word": "Git",
+          "start": 5.284,
+          "end": 5.525
+        },
+        {
+          "word": "thinks",
+          "start": 5.525,
+          "end": 6.009
+        },
+        {
+          "word": "there",
+          "start": 6.009,
+          "end": 6.411
+        },
+        {
+          "word": "are",
+          "start": 6.411,
+          "end": 6.653
+        },
+        {
+          "word": "3",
+          "start": 6.653,
+          "end": 6.733
+        },
+        {
+          "word": "replicas,",
+          "start": 6.733,
+          "end": 7.458
+        },
+        {
+          "word": "but",
+          "start": 7.458,
+          "end": 7.7
+        },
+        {
+          "word": "live",
+          "start": 7.7,
+          "end": 8.022
+        },
+        {
+          "word": "prod",
+          "start": 8.022,
+          "end": 8.344
+        },
+        {
+          "word": "has",
+          "start": 8.344,
+          "end": 8.585
+        },
+        {
+          "word": "7.",
+          "start": 8.585,
+          "end": 8.746
+        },
+        {
+          "word": "That",
+          "start": 8.746,
+          "end": 9.068
+        },
+        {
+          "word": "is",
+          "start": 9.068,
+          "end": 9.229
+        },
+        {
+          "word": "configuration",
+          "start": 9.229,
+          "end": 10.276
+        },
+        {
+          "word": "drift.",
+          "start": 10.276,
+          "end": 10.759
         }
       ],
-      "startFrame": 636
+      "startFrame": 210
+    },
+    {
+      "id": "scene_3",
+      "type": "ClusterGrid",
+      "narration": "Standard CD only pushes code, it has no clue what is actually running. GitOps flips this by pulling state, continuously reconciling live nodes back to Git truth.",
+      "props": {
+        "title": "THE RECONCILIATION LOOP",
+        "badge": "KUBERNETES CONTROL PLANE",
+        "highlightWord": "RECONCILIATION",
+        "underlineColor": "#06b6d4",
+        "mode": "layers",
+        "controlPlane": {
+          "title": "CONTROL PLANE",
+          "subtitle": "\u2014 THE BRAIN (Git Truth)",
+          "components": [
+            {
+              "name": "API SERVER",
+              "iconLabel": "API"
+            },
+            {
+              "name": "ARGO RECONCILER",
+              "iconLabel": "SYNC"
+            }
+          ]
+        },
+        "workerNodes": {
+          "title": "WORKER NODES",
+          "subtitle": "\u2014 THE MUSCLE (Auto-Healed)",
+          "racks": [
+            {
+              "rackName": "NODE 1",
+              "pods": [
+                {
+                  "name": "p1",
+                  "color": "#06b6d4"
+                },
+                {
+                  "name": "p2",
+                  "color": "#06b6d4"
+                }
+              ]
+            },
+            {
+              "rackName": "NODE 2",
+              "pods": [
+                {
+                  "name": "p3",
+                  "color": "#10b981"
+                },
+                {
+                  "name": "p4",
+                  "color": "#10b981"
+                }
+              ]
+            },
+            {
+              "rackName": "NODE 3",
+              "pods": [
+                {
+                  "name": "p5",
+                  "color": "#06b6d4"
+                },
+                {
+                  "name": "p6",
+                  "color": "#10b981"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "audioFile": "audio/scene_3.mp3",
+      "durationSec": 10.49,
+      "durationInFrames": 315,
+      "words": [
+        {
+          "word": "Standard",
+          "start": 0.05,
+          "end": 0.648
+        },
+        {
+          "word": "CD",
+          "start": 0.648,
+          "end": 0.797
+        },
+        {
+          "word": "only",
+          "start": 0.797,
+          "end": 1.096
+        },
+        {
+          "word": "pushes",
+          "start": 1.096,
+          "end": 1.545
+        },
+        {
+          "word": "code,",
+          "start": 1.545,
+          "end": 1.919
+        },
+        {
+          "word": "it",
+          "start": 1.919,
+          "end": 2.068
+        },
+        {
+          "word": "has",
+          "start": 2.068,
+          "end": 2.292
+        },
+        {
+          "word": "no",
+          "start": 2.292,
+          "end": 2.442
+        },
+        {
+          "word": "clue",
+          "start": 2.442,
+          "end": 2.741
+        },
+        {
+          "word": "what",
+          "start": 2.741,
+          "end": 3.04
+        },
+        {
+          "word": "is",
+          "start": 3.04,
+          "end": 3.189
+        },
+        {
+          "word": "actually",
+          "start": 3.189,
+          "end": 3.787
+        },
+        {
+          "word": "running.",
+          "start": 3.787,
+          "end": 4.385
+        },
+        {
+          "word": "GitOps",
+          "start": 4.385,
+          "end": 4.834
+        },
+        {
+          "word": "flips",
+          "start": 4.834,
+          "end": 5.207
+        },
+        {
+          "word": "this",
+          "start": 5.207,
+          "end": 5.506
+        },
+        {
+          "word": "by",
+          "start": 5.506,
+          "end": 5.656
+        },
+        {
+          "word": "pulling",
+          "start": 5.656,
+          "end": 6.179
+        },
+        {
+          "word": "state,",
+          "start": 6.179,
+          "end": 6.628
+        },
+        {
+          "word": "continuously",
+          "start": 6.628,
+          "end": 7.525
+        },
+        {
+          "word": "reconciling",
+          "start": 7.525,
+          "end": 8.347
+        },
+        {
+          "word": "live",
+          "start": 8.347,
+          "end": 8.646
+        },
+        {
+          "word": "nodes",
+          "start": 8.646,
+          "end": 9.019
+        },
+        {
+          "word": "back",
+          "start": 9.019,
+          "end": 9.318
+        },
+        {
+          "word": "to",
+          "start": 9.318,
+          "end": 9.468
+        },
+        {
+          "word": "Git",
+          "start": 9.468,
+          "end": 9.692
+        },
+        {
+          "word": "truth.",
+          "start": 9.692,
+          "end": 10.141
+        }
+      ],
+      "startFrame": 543
     },
     {
       "id": "scene_4",
-      "type": "CodeExplainer",
-      "narration": "Design is not just slapping utility classes together. It is typography hierarchy, intentional contrast, and custom motion physics that make software feel memorable and human.",
+      "type": "ClassifierCard",
+      "narration": "When a production incident strikes, automated classification models immediately route and score ticket urgency based on drift telemetry.",
       "props": {
-        "language": "css",
-        "filename": "taste_vs_slop.css",
-        "code": "/* Vibecoded Default: Median AI Slop */\n.vibecoded-btn {\n  background: linear-gradient(to right, #8b5cf6, #ec4899);\n  border-radius: 9999px; /* Generic AI glow */\n}\n\n/* Crafted with Taste: Human Designer */\n.bespoke-experience {\n  font-family: 'Fraunces', serif;\n  letter-spacing: -0.03em;\n  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);\n}",
-        "highlightLines": [
-          7,
-          8,
-          9,
-          10
-        ],
-        "lineNotes": [
+        "title": "INCIDENT TELEMETRY",
+        "badge": "AUTOMATED TRIAGE",
+        "highlightWord": "TELEMETRY",
+        "underlineColor": "#ec4899",
+        "mode": "ticket-flow",
+        "ticket": {
+          "avatarText": "OPS",
+          "authorName": "SRE Alert System",
+          "badge": "CRITICAL \u00b7 Pod Drift",
+          "message": "Production node-3 replica mismatch. Immediate reconciliation required."
+        },
+        "modelName": "GitOps Agent",
+        "metricCategory": "DRIFT SEVERITY SCORE",
+        "bars": [
           {
-            "line": 2,
-            "note": "Generic AI prompt default"
+            "label": "CRITICAL",
+            "value": 0.94,
+            "color": "#f43f5e"
           },
           {
-            "line": 7,
-            "note": "Intentional editorial craft"
-          },
-          {
-            "line": 10,
-            "note": "Bespoke motion physics"
+            "label": "WARNING",
+            "value": 0.06,
+            "color": "#38bdf8"
           }
         ]
       },
       "audioFile": "audio/scene_4.mp3",
-      "durationSec": 10.55,
-      "durationInFrames": 317,
+      "durationSec": 7.87,
+      "durationInFrames": 236,
       "words": [
         {
-          "word": "Design",
+          "word": "When",
           "start": 0.05,
-          "end": 0.456
-        },
-        {
-          "word": "is",
-          "start": 0.456,
-          "end": 0.592
-        },
-        {
-          "word": "not",
-          "start": 0.592,
-          "end": 0.795
-        },
-        {
-          "word": "just",
-          "start": 0.795,
-          "end": 1.065
-        },
-        {
-          "word": "slapping",
-          "start": 1.065,
-          "end": 1.607
-        },
-        {
-          "word": "utility",
-          "start": 1.607,
-          "end": 2.081
-        },
-        {
-          "word": "classes",
-          "start": 2.081,
-          "end": 2.555
-        },
-        {
-          "word": "together.",
-          "start": 2.555,
-          "end": 3.164
-        },
-        {
-          "word": "It",
-          "start": 3.164,
-          "end": 3.299
-        },
-        {
-          "word": "is",
-          "start": 3.299,
-          "end": 3.435
-        },
-        {
-          "word": "typography",
-          "start": 3.435,
-          "end": 4.112
-        },
-        {
-          "word": "hierarchy,",
-          "start": 4.112,
-          "end": 4.789
-        },
-        {
-          "word": "intentional",
-          "start": 4.789,
-          "end": 5.534
-        },
-        {
-          "word": "contrast,",
-          "start": 5.534,
-          "end": 6.143
-        },
-        {
-          "word": "and",
-          "start": 6.143,
-          "end": 6.346
-        },
-        {
-          "word": "custom",
-          "start": 6.346,
-          "end": 6.752
-        },
-        {
-          "word": "motion",
-          "start": 6.752,
-          "end": 7.158
-        },
-        {
-          "word": "physics",
-          "start": 7.158,
-          "end": 7.632
-        },
-        {
-          "word": "that",
-          "start": 7.632,
-          "end": 7.903
-        },
-        {
-          "word": "make",
-          "start": 7.903,
-          "end": 8.174
-        },
-        {
-          "word": "software",
-          "start": 8.174,
-          "end": 8.715
-        },
-        {
-          "word": "feel",
-          "start": 8.715,
-          "end": 8.986
-        },
-        {
-          "word": "memorable",
-          "start": 8.986,
-          "end": 9.595
-        },
-        {
-          "word": "and",
-          "start": 9.595,
-          "end": 9.798
-        },
-        {
-          "word": "human.",
-          "start": 9.798,
-          "end": 10.205
-        }
-      ],
-      "startFrame": 992
-    },
-    {
-      "id": "scene_5",
-      "type": "SummaryList",
-      "narration": "Code is becoming a commodity, which means taste and polish are your ultimate competitive moat. Stop vibecoding your UI, and bring back actual designers.",
-      "props": {
-        "title": "Why Taste Still Wins",
-        "items": [
-          "AI Writes Boilerplate, Designers Define Soul",
-          "Generic Template UI Destroys Brand Loyalty",
-          "Taste & Polish Are Your Biggest Moats",
-          "Hire Actual Designers to Stand Out"
-        ]
-      },
-      "audioFile": "audio/scene_5.mp3",
-      "durationSec": 9.68,
-      "durationInFrames": 290,
-      "words": [
-        {
-          "word": "Code",
-          "start": 0.05,
-          "end": 0.338
-        },
-        {
-          "word": "is",
-          "start": 0.338,
-          "end": 0.482
-        },
-        {
-          "word": "becoming",
-          "start": 0.482,
-          "end": 1.057
+          "end": 0.301
         },
         {
           "word": "a",
-          "start": 1.057,
-          "end": 1.129
+          "start": 0.301,
+          "end": 0.364
         },
         {
-          "word": "commodity,",
-          "start": 1.129,
-          "end": 1.848
+          "word": "production",
+          "start": 0.364,
+          "end": 0.991
         },
         {
-          "word": "which",
-          "start": 1.848,
-          "end": 2.208
+          "word": "incident",
+          "start": 0.991,
+          "end": 1.493
         },
         {
-          "word": "means",
-          "start": 2.208,
-          "end": 2.568
+          "word": "strikes,",
+          "start": 1.493,
+          "end": 1.995
         },
         {
-          "word": "taste",
-          "start": 2.568,
-          "end": 2.928
+          "word": "automated",
+          "start": 1.995,
+          "end": 2.56
         },
         {
-          "word": "and",
-          "start": 2.928,
-          "end": 3.143
+          "word": "classification",
+          "start": 2.56,
+          "end": 3.438
         },
         {
-          "word": "polish",
-          "start": 3.143,
-          "end": 3.575
+          "word": "models",
+          "start": 3.438,
+          "end": 3.815
         },
         {
-          "word": "are",
-          "start": 3.575,
-          "end": 3.791
+          "word": "immediately",
+          "start": 3.815,
+          "end": 4.505
         },
         {
-          "word": "your",
-          "start": 3.791,
-          "end": 4.079
-        },
-        {
-          "word": "ultimate",
-          "start": 4.079,
-          "end": 4.654
-        },
-        {
-          "word": "competitive",
-          "start": 4.654,
-          "end": 5.445
-        },
-        {
-          "word": "moat.",
-          "start": 5.445,
-          "end": 5.805
-        },
-        {
-          "word": "Stop",
-          "start": 5.805,
-          "end": 6.093
-        },
-        {
-          "word": "vibecoding",
-          "start": 6.093,
-          "end": 6.812
-        },
-        {
-          "word": "your",
-          "start": 6.812,
-          "end": 7.1
-        },
-        {
-          "word": "UI,",
-          "start": 7.1,
-          "end": 7.316
+          "word": "route",
+          "start": 4.505,
+          "end": 4.819
         },
         {
           "word": "and",
-          "start": 7.316,
-          "end": 7.532
+          "start": 4.819,
+          "end": 5.007
         },
         {
-          "word": "bring",
-          "start": 7.532,
-          "end": 7.891
+          "word": "score",
+          "start": 5.007,
+          "end": 5.321
         },
         {
-          "word": "back",
-          "start": 7.891,
-          "end": 8.179
+          "word": "ticket",
+          "start": 5.321,
+          "end": 5.697
         },
         {
-          "word": "actual",
-          "start": 8.179,
-          "end": 8.611
+          "word": "urgency",
+          "start": 5.697,
+          "end": 6.136
         },
         {
-          "word": "designers.",
-          "start": 8.611,
-          "end": 9.33
+          "word": "based",
+          "start": 6.136,
+          "end": 6.45
+        },
+        {
+          "word": "on",
+          "start": 6.45,
+          "end": 6.575
+        },
+        {
+          "word": "drift",
+          "start": 6.575,
+          "end": 6.889
+        },
+        {
+          "word": "telemetry.",
+          "start": 6.889,
+          "end": 7.517
         }
       ],
-      "startFrame": 1309
+      "startFrame": 858
+    },
+    {
+      "id": "scene_5",
+      "type": "OutroCard",
+      "narration": "Drop a like, subscribe for daily DevOps breakthroughs, and follow me on Twitter at mashukjim!",
+      "props": {
+        "title": "Stop Production Drift!",
+        "subtitle": "Subscribe for daily cloud & AI deep dives",
+        "twitterHandle": "@mashukjim",
+        "youtubePrompt": "Like & Subscribe"
+      },
+      "audioFile": "audio/scene_5.mp3",
+      "durationSec": 5.56,
+      "durationInFrames": 167,
+      "words": [
+        {
+          "word": "Drop",
+          "start": 0.05,
+          "end": 0.311
+        },
+        {
+          "word": "a",
+          "start": 0.311,
+          "end": 0.377
+        },
+        {
+          "word": "like,",
+          "start": 0.377,
+          "end": 0.704
+        },
+        {
+          "word": "subscribe",
+          "start": 0.704,
+          "end": 1.292
+        },
+        {
+          "word": "for",
+          "start": 1.292,
+          "end": 1.488
+        },
+        {
+          "word": "daily",
+          "start": 1.488,
+          "end": 1.814
+        },
+        {
+          "word": "DevOps",
+          "start": 1.814,
+          "end": 2.207
+        },
+        {
+          "word": "breakthroughs,",
+          "start": 2.207,
+          "end": 3.121
+        },
+        {
+          "word": "and",
+          "start": 3.121,
+          "end": 3.318
+        },
+        {
+          "word": "follow",
+          "start": 3.318,
+          "end": 3.71
+        },
+        {
+          "word": "me",
+          "start": 3.71,
+          "end": 3.84
+        },
+        {
+          "word": "on",
+          "start": 3.84,
+          "end": 3.971
+        },
+        {
+          "word": "Twitter",
+          "start": 3.971,
+          "end": 4.428
+        },
+        {
+          "word": "at",
+          "start": 4.428,
+          "end": 4.559
+        },
+        {
+          "word": "mashukjim!",
+          "start": 4.559,
+          "end": 5.213
+        }
+      ],
+      "startFrame": 1094
     }
   ],
-  "totalDurationFrames": 1599,
-  "totalDurationSec": 53.3
+  "totalDurationFrames": 1261,
+  "totalDurationSec": 42.03
 }

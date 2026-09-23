@@ -1,0 +1,133 @@
+{
+  "title": "Why GitOps Even Exists: The Production Drift Nightmare",
+  "aspectRatio": "9:16",
+  "engine": "kokoro",
+  "voice": "am_adam",
+  "scenes": [
+    {
+      "id": "scene_1",
+      "type": "TitleCard",
+      "narration": "Why does GitOps even exist? CD was already solved by Jenkins and GitHub Actions. Here is the dirty secret.",
+      "props": {
+        "title": "Why Does GitOps Even Exist?",
+        "subtitle": "Continuous Deployment was solved... until 2 AM SSH happened",
+        "badge": "DEVOPS ARCHITECTURE",
+        "tags": ["GitOps", "Kubernetes", "DevOps", "CloudNative"]
+      }
+    },
+    {
+      "id": "scene_2",
+      "type": "TerminalSplit",
+      "narration": "At 2 a.m., an engineer SSHs into production and manually patches a container. Git thinks there are 3 replicas, but live prod has 7. That is configuration drift.",
+      "props": {
+        "title": "DRIFT",
+        "badge": "STEP 1: THE MANUAL PATCH",
+        "highlightWord": "DRIFT",
+        "underlineColor": "#f43f5e",
+        "cluster": {
+          "title": "PROD CLUSTER",
+          "badge": "DRIFT DETECTED",
+          "nodes": [
+            { "name": "node-1", "pods": [{ "id": "1", "color": "#06b6d4" }, { "id": "2", "color": "#06b6d4" }] },
+            { "name": "node-2", "pods": [{ "id": "3", "color": "#8b5cf6" }, { "id": "4", "color": "#8b5cf6" }] },
+            { "name": "node-3", "pods": [{ "id": "5", "color": "#f43f5e" }, { "id": "6", "color": "#f43f5e" }] }
+          ]
+        },
+        "leftPane": {
+          "title": "git: deploy.yaml",
+          "lines": [
+            { "lineNum": "1", "text": "kind: Deployment" },
+            { "lineNum": "2", "text": "replicas: 3", "type": "normal" },
+            { "lineNum": "3", "text": "image: app:v1.4.2" },
+            { "lineNum": "4", "text": "env: (none)" }
+          ],
+          "caption": "Intended Git State",
+          "stickFigure": {
+            "pose": "laptop-night",
+            "label": "① SSH @ 2am"
+          }
+        },
+        "rightPane": {
+          "title": "kubectl get -o yaml",
+          "lines": [
+            { "lineNum": "1", "text": "kind: Deployment" },
+            { "lineNum": "!", "text": "replicas: 7 <- drift", "type": "drift" },
+            { "lineNum": "!", "text": "image: app:v1.4.1", "type": "drift" },
+            { "lineNum": "!", "text": "env: PATCHED", "type": "drift" }
+          ],
+          "caption": "Live Production State",
+          "stickFigure": {
+            "pose": "standing",
+            "label": "② kubectl edit"
+          }
+        },
+        "bottomText": "AND NOBODY KNOWS...",
+        "bottomSubtext": "Until the next deployment crashes production."
+      }
+    },
+    {
+      "id": "scene_3",
+      "type": "ClusterGrid",
+      "narration": "Standard CD only pushes code, it has no clue what is actually running. GitOps flips this by pulling state, continuously reconciling live nodes back to Git truth.",
+      "props": {
+        "title": "THE RECONCILIATION LOOP",
+        "badge": "KUBERNETES CONTROL PLANE",
+        "highlightWord": "RECONCILIATION",
+        "underlineColor": "#06b6d4",
+        "mode": "layers",
+        "controlPlane": {
+          "title": "CONTROL PLANE",
+          "subtitle": "— THE BRAIN (Git Truth)",
+          "components": [
+            { "name": "API SERVER", "iconLabel": "API" },
+            { "name": "ARGO RECONCILER", "iconLabel": "SYNC" }
+          ]
+        },
+        "workerNodes": {
+          "title": "WORKER NODES",
+          "subtitle": "— THE MUSCLE (Auto-Healed)",
+          "racks": [
+            { "rackName": "NODE 1", "pods": [{ "name": "p1", "color": "#06b6d4" }, { "name": "p2", "color": "#06b6d4" }] },
+            { "rackName": "NODE 2", "pods": [{ "name": "p3", "color": "#10b981" }, { "name": "p4", "color": "#10b981" }] },
+            { "rackName": "NODE 3", "pods": [{ "name": "p5", "color": "#06b6d4" }, { "name": "p6", "color": "#10b981" }] }
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene_4",
+      "type": "ClassifierCard",
+      "narration": "When a production incident strikes, automated classification models immediately route and score ticket urgency based on drift telemetry.",
+      "props": {
+        "title": "INCIDENT TELEMETRY",
+        "badge": "AUTOMATED TRIAGE",
+        "highlightWord": "TELEMETRY",
+        "underlineColor": "#ec4899",
+        "mode": "ticket-flow",
+        "ticket": {
+          "avatarText": "OPS",
+          "authorName": "SRE Alert System",
+          "badge": "CRITICAL · Pod Drift",
+          "message": "Production node-3 replica mismatch. Immediate reconciliation required."
+        },
+        "modelName": "GitOps Agent",
+        "metricCategory": "DRIFT SEVERITY SCORE",
+        "bars": [
+          { "label": "CRITICAL", "value": 0.94, "color": "#f43f5e" },
+          { "label": "WARNING", "value": 0.06, "color": "#38bdf8" }
+        ]
+      }
+    },
+    {
+      "id": "scene_5",
+      "type": "OutroCard",
+      "narration": "Drop a like, subscribe for daily DevOps breakthroughs, and follow me on Twitter at mashukjim!",
+      "props": {
+        "title": "Stop Production Drift!",
+        "subtitle": "Subscribe for daily cloud & AI deep dives",
+        "twitterHandle": "@mashukjim",
+        "youtubePrompt": "Like & Subscribe"
+      }
+    }
+  ]
+}
