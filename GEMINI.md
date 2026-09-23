@@ -8,3 +8,4 @@ See [AGENTS.md](./AGENTS.md) for the complete video creation workflow and schema
 3. Validate using `python scripts/validate_project.py projects/<topic_slug>.json`.
 4. For YouTube Shorts, ensure narration is between 125 and 145 words total (including the outro) to guarantee duration is under 58 seconds.
 5. Execute `python scripts/build_video.py --input projects/<topic_slug>.json --format Shorts --upload --privacy public` when asked to upload.
+6. Every uploaded video is logged in `videos.csv`, and an engaging top-level comment is posted with Like & Subscribe CTA, Twitter (`@mashukjim`), and GitHub (`@MashukeAlam`). Quota-deferred comments can be retried with `python scripts/post_comment.py --pending`.

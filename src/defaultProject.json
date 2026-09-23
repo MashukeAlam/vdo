@@ -1,5 +1,5 @@
 {
-  "title": "Why GitOps Even Exists: The Production Drift Nightmare",
+  "title": "The N+1 Query Problem: How to Stop Killing Your Database",
   "aspectRatio": "9:16",
   "engine": "kokoro",
   "voice": "am_adam",
@@ -7,116 +7,122 @@
     {
       "id": "scene_1",
       "type": "TitleCard",
-      "narration": "Why does GitOps even exist? CD was already solved by Jenkins and GitHub Actions. Here is the dirty secret.",
+      "narration": "Why is your backend API crawling at a snail's pace? You probably have the dreaded N plus 1 query problem.",
       "props": {
-        "title": "Why Does GitOps Even Exist?",
-        "subtitle": "Continuous Deployment was solved... until 2 AM SSH happened",
-        "badge": "DEVOPS ARCHITECTURE",
+        "title": "The N+1 Query Problem",
+        "subtitle": "How one innocent loop silently destroys your database performance",
+        "badge": "DATABASE ARCHITECTURE",
         "tags": [
-          "GitOps",
-          "Kubernetes",
-          "DevOps",
-          "CloudNative"
+          "SQL",
+          "Databases",
+          "Performance",
+          "Backend",
+          "WebDev"
         ]
       },
       "audioFile": "audio/scene_1.mp3",
-      "durationSec": 6.99,
-      "durationInFrames": 210,
+      "durationSec": 6.76,
+      "durationInFrames": 203,
       "words": [
         {
           "word": "Why",
           "start": 0.05,
-          "end": 0.275
-        },
-        {
-          "word": "does",
-          "start": 0.275,
-          "end": 0.574
-        },
-        {
-          "word": "GitOps",
-          "start": 0.574,
-          "end": 1.024
-        },
-        {
-          "word": "even",
-          "start": 1.024,
-          "end": 1.323
-        },
-        {
-          "word": "exist?",
-          "start": 1.323,
-          "end": 1.773
-        },
-        {
-          "word": "CD",
-          "start": 1.773,
-          "end": 1.923
-        },
-        {
-          "word": "was",
-          "start": 1.923,
-          "end": 2.147
-        },
-        {
-          "word": "already",
-          "start": 2.147,
-          "end": 2.672
-        },
-        {
-          "word": "solved",
-          "start": 2.672,
-          "end": 3.121
-        },
-        {
-          "word": "by",
-          "start": 3.121,
-          "end": 3.271
-        },
-        {
-          "word": "Jenkins",
-          "start": 3.271,
-          "end": 3.795
-        },
-        {
-          "word": "and",
-          "start": 3.795,
-          "end": 4.02
-        },
-        {
-          "word": "GitHub",
-          "start": 4.02,
-          "end": 4.47
-        },
-        {
-          "word": "Actions.",
-          "start": 4.47,
-          "end": 5.069
-        },
-        {
-          "word": "Here",
-          "start": 5.069,
-          "end": 5.369
+          "end": 0.272
         },
         {
           "word": "is",
-          "start": 5.369,
-          "end": 5.518
+          "start": 0.272,
+          "end": 0.42
+        },
+        {
+          "word": "your",
+          "start": 0.42,
+          "end": 0.715
+        },
+        {
+          "word": "backend",
+          "start": 0.715,
+          "end": 1.233
+        },
+        {
+          "word": "API",
+          "start": 1.233,
+          "end": 1.455
+        },
+        {
+          "word": "crawling",
+          "start": 1.455,
+          "end": 2.046
+        },
+        {
+          "word": "at",
+          "start": 2.046,
+          "end": 2.194
+        },
+        {
+          "word": "a",
+          "start": 2.194,
+          "end": 2.268
+        },
+        {
+          "word": "snail's",
+          "start": 2.268,
+          "end": 2.785
+        },
+        {
+          "word": "pace?",
+          "start": 2.785,
+          "end": 3.155
+        },
+        {
+          "word": "You",
+          "start": 3.155,
+          "end": 3.377
+        },
+        {
+          "word": "probably",
+          "start": 3.377,
+          "end": 3.968
+        },
+        {
+          "word": "have",
+          "start": 3.968,
+          "end": 4.264
         },
         {
           "word": "the",
-          "start": 5.518,
-          "end": 5.743
+          "start": 4.264,
+          "end": 4.485
         },
         {
-          "word": "dirty",
-          "start": 5.743,
-          "end": 6.118
+          "word": "dreaded",
+          "start": 4.485,
+          "end": 5.003
         },
         {
-          "word": "secret.",
-          "start": 6.118,
-          "end": 6.642
+          "word": "N",
+          "start": 5.003,
+          "end": 5.077
+        },
+        {
+          "word": "plus",
+          "start": 5.077,
+          "end": 5.372
+        },
+        {
+          "word": "1",
+          "start": 5.372,
+          "end": 5.446
+        },
+        {
+          "word": "query",
+          "start": 5.446,
+          "end": 5.816
+        },
+        {
+          "word": "problem.",
+          "start": 5.816,
+          "end": 6.407
         }
       ],
       "startFrame": 0
@@ -124,696 +130,669 @@
     {
       "id": "scene_2",
       "type": "TerminalSplit",
-      "narration": "At 2 a.m., an engineer SSHs into production and manually patches a container. Git thinks there are 3 replicas, but live prod has 7. That is configuration drift.",
+      "narration": "You write a loop to fetch users and their posts. Behind your back, the ORM runs an extra query for every single user. One query silently explodes into hundreds.",
       "props": {
-        "title": "DRIFT",
-        "badge": "STEP 1: THE MANUAL PATCH",
-        "highlightWord": "DRIFT",
+        "title": "THE N+1 EXPLOSION",
+        "badge": "PRODUCTION METRICS",
+        "highlightWord": "EXPLOSION",
         "underlineColor": "#f43f5e",
-        "cluster": {
-          "title": "PROD CLUSTER",
-          "badge": "DRIFT DETECTED",
-          "nodes": [
-            {
-              "name": "node-1",
-              "pods": [
-                {
-                  "id": "1",
-                  "color": "#06b6d4"
-                },
-                {
-                  "id": "2",
-                  "color": "#06b6d4"
-                }
-              ]
-            },
-            {
-              "name": "node-2",
-              "pods": [
-                {
-                  "id": "3",
-                  "color": "#8b5cf6"
-                },
-                {
-                  "id": "4",
-                  "color": "#8b5cf6"
-                }
-              ]
-            },
-            {
-              "name": "node-3",
-              "pods": [
-                {
-                  "id": "5",
-                  "color": "#f43f5e"
-                },
-                {
-                  "id": "6",
-                  "color": "#f43f5e"
-                }
-              ]
-            }
-          ]
-        },
         "leftPane": {
-          "title": "git: deploy.yaml",
+          "title": "ORM: fetch_users.py",
           "lines": [
             {
               "lineNum": "1",
-              "text": "kind: Deployment"
+              "text": "users = User.query.all()"
             },
             {
               "lineNum": "2",
-              "text": "replicas: 3",
-              "type": "normal"
+              "text": "for u in users:"
             },
             {
               "lineNum": "3",
-              "text": "image: app:v1.4.2"
-            },
-            {
-              "lineNum": "4",
-              "text": "env: (none)"
+              "text": "  print(u.profile.bio)"
             }
           ],
-          "caption": "Intended Git State",
+          "caption": "Innocent Application Code",
           "stickFigure": {
-            "pose": "laptop-night",
-            "label": "\u2460 SSH @ 2am"
+            "pose": "confused",
+            "label": "Dev: 'Why 100% CPU?'"
           }
         },
         "rightPane": {
-          "title": "kubectl get -o yaml",
+          "title": "Postgres Query Log",
           "lines": [
             {
               "lineNum": "1",
-              "text": "kind: Deployment"
+              "text": "SELECT * FROM users;  -- 1 query"
             },
             {
               "lineNum": "!",
-              "text": "replicas: 7 <- drift",
+              "text": "SELECT * FROM profile WHERE user_id=1;",
               "type": "drift"
             },
             {
               "lineNum": "!",
-              "text": "image: app:v1.4.1",
+              "text": "SELECT * FROM profile WHERE user_id=2;",
               "type": "drift"
             },
             {
               "lineNum": "!",
-              "text": "env: PATCHED",
+              "text": "... 99 MORE QUERIES SPAMMED!",
               "type": "drift"
             }
           ],
-          "caption": "Live Production State",
+          "caption": "Database Connection Pool on Fire",
           "stickFigure": {
-            "pose": "standing",
-            "label": "\u2461 kubectl edit"
+            "pose": "laptop-night",
+            "label": "DBA @ 2am"
           }
         },
-        "bottomText": "AND NOBODY KNOWS...",
-        "bottomSubtext": "Until the next deployment crashes production."
+        "bottomText": "1 QUERY TURNED INTO 101 QUERIES!",
+        "bottomSubtext": "Network roundtrips choke your database connection pool."
       },
       "audioFile": "audio/scene_2.mp3",
-      "durationSec": 11.11,
-      "durationInFrames": 333,
+      "durationSec": 9.94,
+      "durationInFrames": 298,
       "words": [
         {
-          "word": "At",
+          "word": "You",
           "start": 0.05,
-          "end": 0.211
+          "end": 0.267
         },
         {
-          "word": "2",
-          "start": 0.211,
-          "end": 0.292
-        },
-        {
-          "word": "a.m.,",
-          "start": 0.292,
-          "end": 0.694
-        },
-        {
-          "word": "an",
-          "start": 0.694,
-          "end": 0.855
-        },
-        {
-          "word": "engineer",
-          "start": 0.855,
-          "end": 1.499
-        },
-        {
-          "word": "SSHs",
-          "start": 1.499,
-          "end": 1.821
-        },
-        {
-          "word": "into",
-          "start": 1.821,
-          "end": 2.144
-        },
-        {
-          "word": "production",
-          "start": 2.144,
-          "end": 2.949
-        },
-        {
-          "word": "and",
-          "start": 2.949,
-          "end": 3.19
-        },
-        {
-          "word": "manually",
-          "start": 3.19,
-          "end": 3.835
-        },
-        {
-          "word": "patches",
-          "start": 3.835,
-          "end": 4.398
+          "word": "write",
+          "start": 0.267,
+          "end": 0.628
         },
         {
           "word": "a",
-          "start": 4.398,
-          "end": 4.479
+          "start": 0.628,
+          "end": 0.7
         },
         {
-          "word": "container.",
-          "start": 4.479,
-          "end": 5.284
-        },
-        {
-          "word": "Git",
-          "start": 5.284,
-          "end": 5.525
-        },
-        {
-          "word": "thinks",
-          "start": 5.525,
-          "end": 6.009
-        },
-        {
-          "word": "there",
-          "start": 6.009,
-          "end": 6.411
-        },
-        {
-          "word": "are",
-          "start": 6.411,
-          "end": 6.653
-        },
-        {
-          "word": "3",
-          "start": 6.653,
-          "end": 6.733
-        },
-        {
-          "word": "replicas,",
-          "start": 6.733,
-          "end": 7.458
-        },
-        {
-          "word": "but",
-          "start": 7.458,
-          "end": 7.7
-        },
-        {
-          "word": "live",
-          "start": 7.7,
-          "end": 8.022
-        },
-        {
-          "word": "prod",
-          "start": 8.022,
-          "end": 8.344
-        },
-        {
-          "word": "has",
-          "start": 8.344,
-          "end": 8.585
-        },
-        {
-          "word": "7.",
-          "start": 8.585,
-          "end": 8.746
-        },
-        {
-          "word": "That",
-          "start": 8.746,
-          "end": 9.068
-        },
-        {
-          "word": "is",
-          "start": 9.068,
-          "end": 9.229
-        },
-        {
-          "word": "configuration",
-          "start": 9.229,
-          "end": 10.276
-        },
-        {
-          "word": "drift.",
-          "start": 10.276,
-          "end": 10.759
-        }
-      ],
-      "startFrame": 210
-    },
-    {
-      "id": "scene_3",
-      "type": "ClusterGrid",
-      "narration": "Standard CD only pushes code, it has no clue what is actually running. GitOps flips this by pulling state, continuously reconciling live nodes back to Git truth.",
-      "props": {
-        "title": "THE RECONCILIATION LOOP",
-        "badge": "KUBERNETES CONTROL PLANE",
-        "highlightWord": "RECONCILIATION",
-        "underlineColor": "#06b6d4",
-        "mode": "layers",
-        "controlPlane": {
-          "title": "CONTROL PLANE",
-          "subtitle": "\u2014 THE BRAIN (Git Truth)",
-          "components": [
-            {
-              "name": "API SERVER",
-              "iconLabel": "API"
-            },
-            {
-              "name": "ARGO RECONCILER",
-              "iconLabel": "SYNC"
-            }
-          ]
-        },
-        "workerNodes": {
-          "title": "WORKER NODES",
-          "subtitle": "\u2014 THE MUSCLE (Auto-Healed)",
-          "racks": [
-            {
-              "rackName": "NODE 1",
-              "pods": [
-                {
-                  "name": "p1",
-                  "color": "#06b6d4"
-                },
-                {
-                  "name": "p2",
-                  "color": "#06b6d4"
-                }
-              ]
-            },
-            {
-              "rackName": "NODE 2",
-              "pods": [
-                {
-                  "name": "p3",
-                  "color": "#10b981"
-                },
-                {
-                  "name": "p4",
-                  "color": "#10b981"
-                }
-              ]
-            },
-            {
-              "rackName": "NODE 3",
-              "pods": [
-                {
-                  "name": "p5",
-                  "color": "#06b6d4"
-                },
-                {
-                  "name": "p6",
-                  "color": "#10b981"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "audioFile": "audio/scene_3.mp3",
-      "durationSec": 10.49,
-      "durationInFrames": 315,
-      "words": [
-        {
-          "word": "Standard",
-          "start": 0.05,
-          "end": 0.648
-        },
-        {
-          "word": "CD",
-          "start": 0.648,
-          "end": 0.797
-        },
-        {
-          "word": "only",
-          "start": 0.797,
-          "end": 1.096
-        },
-        {
-          "word": "pushes",
-          "start": 1.096,
-          "end": 1.545
-        },
-        {
-          "word": "code,",
-          "start": 1.545,
-          "end": 1.919
-        },
-        {
-          "word": "it",
-          "start": 1.919,
-          "end": 2.068
-        },
-        {
-          "word": "has",
-          "start": 2.068,
-          "end": 2.292
-        },
-        {
-          "word": "no",
-          "start": 2.292,
-          "end": 2.442
-        },
-        {
-          "word": "clue",
-          "start": 2.442,
-          "end": 2.741
-        },
-        {
-          "word": "what",
-          "start": 2.741,
-          "end": 3.04
-        },
-        {
-          "word": "is",
-          "start": 3.04,
-          "end": 3.189
-        },
-        {
-          "word": "actually",
-          "start": 3.189,
-          "end": 3.787
-        },
-        {
-          "word": "running.",
-          "start": 3.787,
-          "end": 4.385
-        },
-        {
-          "word": "GitOps",
-          "start": 4.385,
-          "end": 4.834
-        },
-        {
-          "word": "flips",
-          "start": 4.834,
-          "end": 5.207
-        },
-        {
-          "word": "this",
-          "start": 5.207,
-          "end": 5.506
-        },
-        {
-          "word": "by",
-          "start": 5.506,
-          "end": 5.656
-        },
-        {
-          "word": "pulling",
-          "start": 5.656,
-          "end": 6.179
-        },
-        {
-          "word": "state,",
-          "start": 6.179,
-          "end": 6.628
-        },
-        {
-          "word": "continuously",
-          "start": 6.628,
-          "end": 7.525
-        },
-        {
-          "word": "reconciling",
-          "start": 7.525,
-          "end": 8.347
-        },
-        {
-          "word": "live",
-          "start": 8.347,
-          "end": 8.646
-        },
-        {
-          "word": "nodes",
-          "start": 8.646,
-          "end": 9.019
-        },
-        {
-          "word": "back",
-          "start": 9.019,
-          "end": 9.318
+          "word": "loop",
+          "start": 0.7,
+          "end": 0.989
         },
         {
           "word": "to",
-          "start": 9.318,
-          "end": 9.468
+          "start": 0.989,
+          "end": 1.134
         },
         {
-          "word": "Git",
-          "start": 9.468,
-          "end": 9.692
+          "word": "fetch",
+          "start": 1.134,
+          "end": 1.495
         },
         {
-          "word": "truth.",
-          "start": 9.692,
-          "end": 10.141
+          "word": "users",
+          "start": 1.495,
+          "end": 1.856
+        },
+        {
+          "word": "and",
+          "start": 1.856,
+          "end": 2.073
+        },
+        {
+          "word": "their",
+          "start": 2.073,
+          "end": 2.434
+        },
+        {
+          "word": "posts.",
+          "start": 2.434,
+          "end": 2.867
+        },
+        {
+          "word": "Behind",
+          "start": 2.867,
+          "end": 3.301
+        },
+        {
+          "word": "your",
+          "start": 3.301,
+          "end": 3.59
+        },
+        {
+          "word": "back,",
+          "start": 3.59,
+          "end": 3.951
+        },
+        {
+          "word": "the",
+          "start": 3.951,
+          "end": 4.168
+        },
+        {
+          "word": "ORM",
+          "start": 4.168,
+          "end": 4.385
+        },
+        {
+          "word": "runs",
+          "start": 4.385,
+          "end": 4.674
+        },
+        {
+          "word": "an",
+          "start": 4.674,
+          "end": 4.818
+        },
+        {
+          "word": "extra",
+          "start": 4.818,
+          "end": 5.179
+        },
+        {
+          "word": "query",
+          "start": 5.179,
+          "end": 5.54
+        },
+        {
+          "word": "for",
+          "start": 5.54,
+          "end": 5.757
+        },
+        {
+          "word": "every",
+          "start": 5.757,
+          "end": 6.118
+        },
+        {
+          "word": "single",
+          "start": 6.118,
+          "end": 6.552
+        },
+        {
+          "word": "user.",
+          "start": 6.552,
+          "end": 6.913
+        },
+        {
+          "word": "One",
+          "start": 6.913,
+          "end": 7.13
+        },
+        {
+          "word": "query",
+          "start": 7.13,
+          "end": 7.491
+        },
+        {
+          "word": "silently",
+          "start": 7.491,
+          "end": 8.069
+        },
+        {
+          "word": "explodes",
+          "start": 8.069,
+          "end": 8.647
+        },
+        {
+          "word": "into",
+          "start": 8.647,
+          "end": 8.936
+        },
+        {
+          "word": "hundreds.",
+          "start": 8.936,
+          "end": 9.586
         }
       ],
-      "startFrame": 543
+      "startFrame": 203
+    },
+    {
+      "id": "scene_3",
+      "type": "CodeExplainer",
+      "narration": "The fix is eager loading. Using select related or prefetch tells the database to fetch relational data in bulk, replacing a hundred roundtrips with a single fast join.",
+      "props": {
+        "language": "python",
+        "filename": "optimized_query.py",
+        "code": "# \u274c BAD: Triggers N+1 Queries\nusers = User.query.all()\nfor user in users:\n    print(user.profile.bio)\n\n# \u2705 FAST: Eager Loading with JOIN\nusers = User.query.options(\n    joinedload(User.profile)\n).all()",
+        "highlightLines": [
+          7,
+          8,
+          9
+        ],
+        "lineNotes": [
+          {
+            "line": 2,
+            "note": "Spams a query per loop iteration"
+          },
+          {
+            "line": 7,
+            "note": "Eager loads profile in 1 single JOIN query"
+          }
+        ]
+      },
+      "audioFile": "audio/scene_3.mp3",
+      "durationSec": 10.47,
+      "durationInFrames": 314,
+      "words": [
+        {
+          "word": "The",
+          "start": 0.05,
+          "end": 0.266
+        },
+        {
+          "word": "fix",
+          "start": 0.266,
+          "end": 0.482
+        },
+        {
+          "word": "is",
+          "start": 0.482,
+          "end": 0.625
+        },
+        {
+          "word": "eager",
+          "start": 0.625,
+          "end": 0.985
+        },
+        {
+          "word": "loading.",
+          "start": 0.985,
+          "end": 1.56
+        },
+        {
+          "word": "Using",
+          "start": 1.56,
+          "end": 1.92
+        },
+        {
+          "word": "select",
+          "start": 1.92,
+          "end": 2.352
+        },
+        {
+          "word": "related",
+          "start": 2.352,
+          "end": 2.855
+        },
+        {
+          "word": "or",
+          "start": 2.855,
+          "end": 2.999
+        },
+        {
+          "word": "prefetch",
+          "start": 2.999,
+          "end": 3.574
+        },
+        {
+          "word": "tells",
+          "start": 3.574,
+          "end": 3.934
+        },
+        {
+          "word": "the",
+          "start": 3.934,
+          "end": 4.15
+        },
+        {
+          "word": "database",
+          "start": 4.15,
+          "end": 4.725
+        },
+        {
+          "word": "to",
+          "start": 4.725,
+          "end": 4.869
+        },
+        {
+          "word": "fetch",
+          "start": 4.869,
+          "end": 5.229
+        },
+        {
+          "word": "relational",
+          "start": 5.229,
+          "end": 5.948
+        },
+        {
+          "word": "data",
+          "start": 5.948,
+          "end": 6.235
+        },
+        {
+          "word": "in",
+          "start": 6.235,
+          "end": 6.379
+        },
+        {
+          "word": "bulk,",
+          "start": 6.379,
+          "end": 6.739
+        },
+        {
+          "word": "replacing",
+          "start": 6.739,
+          "end": 7.386
+        },
+        {
+          "word": "a",
+          "start": 7.386,
+          "end": 7.458
+        },
+        {
+          "word": "hundred",
+          "start": 7.458,
+          "end": 7.962
+        },
+        {
+          "word": "roundtrips",
+          "start": 7.962,
+          "end": 8.681
+        },
+        {
+          "word": "with",
+          "start": 8.681,
+          "end": 8.969
+        },
+        {
+          "word": "a",
+          "start": 8.969,
+          "end": 9.04
+        },
+        {
+          "word": "single",
+          "start": 9.04,
+          "end": 9.472
+        },
+        {
+          "word": "fast",
+          "start": 9.472,
+          "end": 9.76
+        },
+        {
+          "word": "join.",
+          "start": 9.76,
+          "end": 10.119
+        }
+      ],
+      "startFrame": 501
     },
     {
       "id": "scene_4",
       "type": "ClassifierCard",
-      "narration": "When a production incident strikes, automated classification models immediately route and score ticket urgency based on drift telemetry.",
+      "narration": "With eager loading and composite indexing, query execution drops from nearly a full second down to twelve milliseconds. Always check your execution plan.",
       "props": {
-        "title": "INCIDENT TELEMETRY",
-        "badge": "AUTOMATED TRIAGE",
-        "highlightWord": "TELEMETRY",
-        "underlineColor": "#ec4899",
-        "mode": "ticket-flow",
-        "ticket": {
-          "avatarText": "OPS",
-          "authorName": "SRE Alert System",
-          "badge": "CRITICAL \u00b7 Pod Drift",
-          "message": "Production node-3 replica mismatch. Immediate reconciliation required."
+        "title": "PERFORMANCE BENCHMARK",
+        "badge": "1,000 CONCURRENT USERS",
+        "highlightWord": "BENCHMARK",
+        "underlineColor": "#10b981",
+        "mode": "comparison",
+        "leftModel": {
+          "name": "Naive N+1 Query",
+          "iconType": "doc",
+          "accentColor": "#f43f5e",
+          "bars": [
+            {
+              "label": "Latency (s)",
+              "value": 0.92,
+              "color": "#f43f5e"
+            },
+            {
+              "label": "DB Queries",
+              "value": 1.0,
+              "color": "#f43f5e"
+            },
+            {
+              "label": "CPU Usage",
+              "value": 0.95,
+              "color": "#f43f5e"
+            }
+          ]
         },
-        "modelName": "GitOps Agent",
-        "metricCategory": "DRIFT SEVERITY SCORE",
-        "bars": [
-          {
-            "label": "CRITICAL",
-            "value": 0.94,
-            "color": "#f43f5e"
-          },
-          {
-            "label": "WARNING",
-            "value": 0.06,
-            "color": "#38bdf8"
-          }
-        ]
+        "rightModel": {
+          "name": "Eager Loaded JOIN",
+          "iconType": "cube",
+          "accentColor": "#10b981",
+          "bars": [
+            {
+              "label": "Latency (s)",
+              "value": 0.02,
+              "color": "#10b981"
+            },
+            {
+              "label": "DB Queries",
+              "value": 0.02,
+              "color": "#10b981"
+            },
+            {
+              "label": "CPU Usage",
+              "value": 0.08,
+              "color": "#10b981"
+            }
+          ]
+        }
       },
       "audioFile": "audio/scene_4.mp3",
-      "durationSec": 7.87,
-      "durationInFrames": 236,
+      "durationSec": 9.19,
+      "durationInFrames": 276,
       "words": [
         {
-          "word": "When",
+          "word": "With",
           "start": 0.05,
-          "end": 0.301
+          "end": 0.318
         },
         {
-          "word": "a",
-          "start": 0.301,
-          "end": 0.364
+          "word": "eager",
+          "start": 0.318,
+          "end": 0.654
         },
         {
-          "word": "production",
-          "start": 0.364,
-          "end": 0.991
-        },
-        {
-          "word": "incident",
-          "start": 0.991,
-          "end": 1.493
-        },
-        {
-          "word": "strikes,",
-          "start": 1.493,
-          "end": 1.995
-        },
-        {
-          "word": "automated",
-          "start": 1.995,
-          "end": 2.56
-        },
-        {
-          "word": "classification",
-          "start": 2.56,
-          "end": 3.438
-        },
-        {
-          "word": "models",
-          "start": 3.438,
-          "end": 3.815
-        },
-        {
-          "word": "immediately",
-          "start": 3.815,
-          "end": 4.505
-        },
-        {
-          "word": "route",
-          "start": 4.505,
-          "end": 4.819
+          "word": "loading",
+          "start": 0.654,
+          "end": 1.124
         },
         {
           "word": "and",
-          "start": 4.819,
-          "end": 5.007
+          "start": 1.124,
+          "end": 1.325
         },
         {
-          "word": "score",
-          "start": 5.007,
-          "end": 5.321
+          "word": "composite",
+          "start": 1.325,
+          "end": 1.929
         },
         {
-          "word": "ticket",
-          "start": 5.321,
-          "end": 5.697
+          "word": "indexing,",
+          "start": 1.929,
+          "end": 2.532
         },
         {
-          "word": "urgency",
-          "start": 5.697,
-          "end": 6.136
+          "word": "query",
+          "start": 2.532,
+          "end": 2.868
         },
         {
-          "word": "based",
-          "start": 6.136,
-          "end": 6.45
+          "word": "execution",
+          "start": 2.868,
+          "end": 3.472
         },
         {
-          "word": "on",
-          "start": 6.45,
-          "end": 6.575
+          "word": "drops",
+          "start": 3.472,
+          "end": 3.807
         },
         {
-          "word": "drift",
-          "start": 6.575,
-          "end": 6.889
+          "word": "from",
+          "start": 3.807,
+          "end": 4.076
         },
         {
-          "word": "telemetry.",
-          "start": 6.889,
-          "end": 7.517
+          "word": "nearly",
+          "start": 4.076,
+          "end": 4.478
+        },
+        {
+          "word": "a",
+          "start": 4.478,
+          "end": 4.545
+        },
+        {
+          "word": "full",
+          "start": 4.545,
+          "end": 4.814
+        },
+        {
+          "word": "second",
+          "start": 4.814,
+          "end": 5.216
+        },
+        {
+          "word": "down",
+          "start": 5.216,
+          "end": 5.485
+        },
+        {
+          "word": "to",
+          "start": 5.485,
+          "end": 5.619
+        },
+        {
+          "word": "twelve",
+          "start": 5.619,
+          "end": 6.021
+        },
+        {
+          "word": "milliseconds.",
+          "start": 6.021,
+          "end": 6.894
+        },
+        {
+          "word": "Always",
+          "start": 6.894,
+          "end": 7.296
+        },
+        {
+          "word": "check",
+          "start": 7.296,
+          "end": 7.632
+        },
+        {
+          "word": "your",
+          "start": 7.632,
+          "end": 7.9
+        },
+        {
+          "word": "execution",
+          "start": 7.9,
+          "end": 8.504
+        },
+        {
+          "word": "plan.",
+          "start": 8.504,
+          "end": 8.839
         }
       ],
-      "startFrame": 858
+      "startFrame": 815
     },
     {
       "id": "scene_5",
       "type": "OutroCard",
-      "narration": "Drop a like, subscribe for daily DevOps breakthroughs, and follow me on Twitter at mashukjim!",
+      "narration": "Drop a like, subscribe for daily software engineering deep dives, and follow me on Twitter at mashukjim!",
       "props": {
-        "title": "Stop Production Drift!",
-        "subtitle": "Subscribe for daily cloud & AI deep dives",
+        "title": "Speed Up Your Backend!",
+        "subtitle": "Subscribe for daily database & architecture deep dives",
         "twitterHandle": "@mashukjim",
         "youtubePrompt": "Like & Subscribe"
       },
       "audioFile": "audio/scene_5.mp3",
-      "durationSec": 5.56,
-      "durationInFrames": 167,
+      "durationSec": 6.37,
+      "durationInFrames": 191,
       "words": [
         {
           "word": "Drop",
           "start": 0.05,
-          "end": 0.311
+          "end": 0.322
         },
         {
           "word": "a",
-          "start": 0.311,
-          "end": 0.377
+          "start": 0.322,
+          "end": 0.389
         },
         {
           "word": "like,",
-          "start": 0.377,
-          "end": 0.704
+          "start": 0.389,
+          "end": 0.729
         },
         {
           "word": "subscribe",
-          "start": 0.704,
-          "end": 1.292
+          "start": 0.729,
+          "end": 1.34
         },
         {
           "word": "for",
-          "start": 1.292,
-          "end": 1.488
+          "start": 1.34,
+          "end": 1.543
         },
         {
           "word": "daily",
-          "start": 1.488,
-          "end": 1.814
+          "start": 1.543,
+          "end": 1.883
         },
         {
-          "word": "DevOps",
-          "start": 1.814,
-          "end": 2.207
+          "word": "software",
+          "start": 1.883,
+          "end": 2.426
         },
         {
-          "word": "breakthroughs,",
-          "start": 2.207,
-          "end": 3.121
+          "word": "engineering",
+          "start": 2.426,
+          "end": 3.172
+        },
+        {
+          "word": "deep",
+          "start": 3.172,
+          "end": 3.444
+        },
+        {
+          "word": "dives,",
+          "start": 3.444,
+          "end": 3.851
         },
         {
           "word": "and",
-          "start": 3.121,
-          "end": 3.318
+          "start": 3.851,
+          "end": 4.055
         },
         {
           "word": "follow",
-          "start": 3.318,
-          "end": 3.71
+          "start": 4.055,
+          "end": 4.462
         },
         {
           "word": "me",
-          "start": 3.71,
-          "end": 3.84
+          "start": 4.462,
+          "end": 4.598
         },
         {
           "word": "on",
-          "start": 3.84,
-          "end": 3.971
+          "start": 4.598,
+          "end": 4.734
         },
         {
           "word": "Twitter",
-          "start": 3.971,
-          "end": 4.428
+          "start": 4.734,
+          "end": 5.209
         },
         {
           "word": "at",
-          "start": 4.428,
-          "end": 4.559
+          "start": 5.209,
+          "end": 5.345
         },
         {
           "word": "mashukjim!",
-          "start": 4.559,
-          "end": 5.213
+          "start": 5.345,
+          "end": 6.023
         }
       ],
-      "startFrame": 1094
+      "startFrame": 1091
     }
   ],
-  "totalDurationFrames": 1261,
-  "totalDurationSec": 42.03
+  "totalDurationFrames": 1282,
+  "totalDurationSec": 42.73
 }

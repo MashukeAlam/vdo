@@ -31,3 +31,7 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Temp reference images
+images/
+

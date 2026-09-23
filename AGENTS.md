@@ -89,10 +89,13 @@ interface SceneData {
 ## 💻 Tech Stack & Key Files
 
 * **`projects/*.json`**: User project definitions.
+* **`videos.csv`**: Central database of all created/uploaded videos, topics, URLs, and comment statuses.
+* **`scripts/tracker.py`**: Helper module to record, load, and update video entries in `videos.csv`.
+* **`scripts/post_comment.py`**: CLI tool to post or retry top comments on YouTube videos (`--pending` retries quota-deferred comments).
 * **`scripts/build_video.py`**: Main CLI entrypoint.
 * **`scripts/validate_project.py`**: JSON schema and word pacing validator.
 * **`scripts/local_tts.py`**: Kokoro-82M ONNX inference engine (`models/kokoro-v1.0.onnx`).
-* **`scripts/youtube_uploader.py`**: YouTube Data API v3 client with auto-refreshing OAuth token.
+* **`scripts/youtube_uploader.py`**: YouTube Data API v3 client with auto-refreshing OAuth token and automatic logging to `videos.csv`.
 * **`src/types.ts`**: TypeScript definitions for all scenes and props.
 * **`src/VideoComposition.tsx`**: Remotion composition mounting scenes and SubtitleOverlay.
 * **`src/components/`**: React visual components with Tailwind CSS styling.
@@ -102,11 +105,20 @@ interface SceneData {
 ## ⚠️ Important Rules for Agents
 
 1. **Shorts Duration Rule**: YouTube Shorts must be strictly under 60.0 seconds. 125-145 words @ 2.6 words/sec generates ~50-55s of audio, leaving a safety buffer.
-2. **Mandatory Like, Subscribe & Twitter CTA Rule**:
+2. **Mandatory Like, Subscribe, Twitter & GitHub CTA Rule**:
    * Every video MUST end with an outro scene using `OutroCard`.
    * The narration MUST tell viewers to **Like**, **Subscribe**, and **Follow on Twitter / X at `@mashukjim`**.
    * Example spoken narration: *"Drop a like, subscribe for daily AI breakthroughs, and follow me on Twitter at mashukjim."*
    * Keep this outro punchy (~12-15 words) and counted within the total word budget.
-3. **Windows Encoding Rule**: In Python scripts on Windows, always ensure `sys.stdout.reconfigure(encoding="utf-8")` is present if printing emojis or special characters.
-4. **Remotion Webpack Rule**: Shiki 4 requires `@shikijs/magic-move`. Always preserve `enableTailwind` in `remotion.config.ts`.
-5. **OAuth Token Rule**: `credentials/token.json` automatically refreshes. Do not delete or overwrite it unless the user explicitly requests re-authenticating.
+   * Every top comment MUST contain:
+     - Question or discussion starter
+     - Like & Subscribe prompt
+     - Twitter / X: `@mashukjim` (`https://twitter.com/mashukjim`)
+     - GitHub: `@MashukeAlam` (`https://github.com/MashukeAlam/vdo`)
+3. **Tracking in `videos.csv` Rule**:
+   * All uploaded videos must be logged in `videos.csv` with their format, duration, URLs, and comment status.
+   * If YouTube quota limit (10k units/day) is reached during comment posting, status is marked `Pending (Quota Exceeded)`.
+   * Pending comments can be retried once quota resets via `python scripts/post_comment.py --pending`.
+4. **Windows Encoding Rule**: In Python scripts on Windows, always ensure `sys.stdout.reconfigure(encoding="utf-8")` is present if printing emojis or special characters.
+5. **Remotion Webpack Rule**: Shiki 4 requires `@shikijs/magic-move`. Always preserve `enableTailwind` in `remotion.config.ts`.
+6. **OAuth Token Rule**: `credentials/token.json` automatically refreshes. Do not delete or overwrite it unless the user explicitly requests re-authenticating.
